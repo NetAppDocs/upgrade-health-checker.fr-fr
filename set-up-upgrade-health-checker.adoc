@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: set-up-upgrade-health-checker.html 
+keywords: upgrade, health, checker, set up, download 
+summary: 'Vous pouvez télécharger Upgrade Health Checker pour générer des rapports complets sur site avant de passer à une version plus récente d"ONTAP.' 
+---
+= Téléchargez et configurez Upgrade Health Checker
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez télécharger Upgrade Health Checker pour générer des rapports complets sur site avant de passer à une version plus récente d'ONTAP.
+
+.Avant de commencer
+Configurez une machine virtuelle pour Upgrade Health Checker avec les spécifications suivantes :
+
+* Processeur et mémoire : VM m5.large ou équivalent avec 2 vCPUs et 8 GiB RAM.
+* Système d'exploitation recommandé : Ubuntu 22.04 pour une compatibilité optimale.
+* Stockage : Prévoyez un volume racine d’au moins 100 GB et un volume NFS supplémentaire d’au moins 100 GB pour garantir la préservation des données en cas de compromission de la machine virtuelle.
+* Configuration requise pour l'hébergement : Placez la machine virtuelle dans un emplacement disposant d'une connectivité au cluster et d'un accès Internet afin de permettre les mises à jour automatiques des outils. La machine doit avoir accès aux points de terminaison suivants via HTTPS pour effectuer les mises à jour automatiques :
++
+** https://api.uhc.netapp.com[]
+** https://gql.aiq.netapp.com[]
++
+En cas d'absence d'accès à Internet, consultez NetApp pour obtenir des conseils.
+
+
+
+* Paquets recommandés : installez un serveur web pour faciliter l’accès.
+
+
+De plus, assurez-vous que la machine virtuelle peut se connecter au point de terminaison de télémétrie (https://support.netapp.com/[] via HTTPS pour permettre à NetApp de recevoir des informations AutoSupport sur vos plans de mise à niveau.
+
+.Étapes
+. Téléchargez le fichier binaire Upgrade Health Checker en link:https://console.netapp.com/automationHub["accéder au NetApp Console Automation Hub"] trouvant la tuile Upgrade Health Checker.
+. Configurez la machine virtuelle Upgrade Health Checker et utilisez SSH pour placer le binaire à l'emplacement de votre choix.
+. Vérifiez la signature numérique d'Upgrade Health Checker.
++
+Upgrade Health Checker possède un certificat de signature de code public (`UHC-Linux-codesigning-certificate-public.pem`) et une chaîne de certificats intermédiaires et racine (`UHC-Linux-chain-certificates-public.pem`).
+
++
+.. (Facultatif) Vérifiez le certificat de signature de code par rapport à la chaîne :
++
+[listing]
+----
+openssl verify -CAfile UHC-Linux-chain-certificates-public.pem UHC-Linux-codesigning-certificate-public.pem
+----
++
+Un résultat `OK` confirme une chaîne de confiance valide.
+
+.. Extraire la clé publique du certificat de signature de code :
++
+[listing]
+----
+openssl x509 -in UHC-Linux-codesigning-certificate-public.pem -pubkey -noout -out UHC-Linux-public.pub
+----
+.. Vérifiez le fichier de signature (`uhc.sig`) par rapport au binaire Upgrade Health Checker à l'aide de la clé publique :
++
+[listing]
+----
+openssl dgst -sha256 -verify UHC-Linux-public.pub -signature uhc.sig uhc
+----
++
+Un résultat de `Verified OK` confirme que la signature est valide.
+
+
+
+. Configurez un compte de service et un rôle pour l'accès au cluster ONTAP. Pour l'accès au cluster via Upgrade Health Checker, créez le rôle de service en tant que rôle REST.
++
+
+NOTE: Vous pouvez créer un playbook Ansible pour automatiser le déploiement du rôle et de l'utilisateur sur tous les clusters ONTAP.
+
++
+Vous devez créer le compte de service pour l'application http. Utilisez les commandes CLI suivantes pour configurer les autorisations nécessaires :
+
++
+[source, cli]
+----
+security login rest-role create -role uhctool -api /api -access readonly -vserver
+
+security login rest-role create -role uhctool -api /api/support/autosupport -access read_create_modify -vserver
+
+security login rest-role create -role uhctool -api /api/support/autosupport/messages -access read_create_modify -vserver
+
+vserver services web access create -name spi -role uhctool -vserver
+
+security login create -user-or-group-name uhctool -role uhctool -application http -authentication-method password
+
+security login create -user-or-group-name uhctool -role uhctool -application ssh -authentication-method password
+----
+. Mettez en place la gestion des identifiants pour sécuriser l'accès à l'application.
++
+Par exemple, si vous avez CyberArk et Conjur, vous pouvez configurer votre environnement pour éviter de transmettre les identifiants via un fichier yaml ou une ligne de commandes.
+
++
+.. Créer les coffres-forts CyberArk requis :
++
+... Créez un Safe (Main-Conjur-Safe) qui contient les identifiants et les secrets de l'application
+... Créez un Safe (API-Credentials-Safe) qui contient le Conjur Host ID et la clé API
+... Créez un Safe (Conjur-SSL-Certificate) contenant le certificat nécessaire
+
+
+.. Créez les fichiers de configuration (Conjur.conf) et d'identité (Conjur.identity) pour cette application :
++
+... Conjur.conf
++
+[listing]
+----
+account:
+plugins:[]
+appliance_url: https://FQDN
+cert_file: /etc/conjur.pem
+----
+... Conjur.identity
++
+[listing]
+----
+machine https://FQDN/authn
+login host /prodvault/devops/<Main-Conjur-Safe>/host1
+password XXXXXX
+----
+
+
+
+
++
+Voici un exemple d'utilisation de CyberArk et Conjur dans un playbook Ansible :
+
++
+.. Installez Conjur Ansible Collection, qui inclut le Conjur Ansible Lookup Plugin, sur l'hôte Ansible :
++
+[listing]
+----
+ansible-galaxy collection install cyberark.conjur
+----
+.. Créez une tâche dans un fichier yaml pour récupérer le nom d'utilisateur et le mot de passe depuis CyberArk :
++
+[listing]
+----
+conjur_username: "{{ lookup('cyberark.conjur.conjur_variable', 'prodvault/devops/<Main-Conjur-Safe>/<Account name>/username', validate_certs=false) }}"
+conjur_password: "{{ lookup('cyberark.conjur.conjur_variable', 'prodvault/devops/<Main-Conjur-Safe>/<Account name>/password', validate_certs=false) }}"
+----
+
+
+
+
+.Et ensuite ?
+Vous pouvez utiliser Upgrade Health Checker pour vous aider à planifier une mise à niveau ONTAP en link:generate-report-upgrade-health-checker.html["génération d'un rapport de mise à niveau"].

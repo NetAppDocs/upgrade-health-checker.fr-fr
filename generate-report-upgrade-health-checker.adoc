@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: generate-report-upgrade-health-checker.html 
+keywords: upgrade, health, checker, report 
+summary: Vous pouvez utiliser Upgrade Health Checker pour générer un plan de mise à niveau pour un ou plusieurs clusters ONTAP. 
+---
+= Générez un plan de mise à niveau avec Upgrade Health Checker
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez utiliser Upgrade Health Checker pour générer un plan de mise à niveau pour un ou plusieurs clusters ONTAP.
+
+Vous pouvez également link:automate-report-upgrade-health-checker.html["automatiser la génération de rapports de mise à niveau"] pour vous aider à maintenir à jour vos plans de mise à niveau si vous disposez d'un environnement vaste et complexe avec plusieurs clusters.
+
+.Avant de commencer
+Pour en savoir plus sur un paramètre spécifique de Upgrade Health Checker et sur l'ordre de priorité selon laquelle l'outil accepte les entrées, reportez-vous à link:upgrade-health-checker-input-parameters.html["Découvrez les paramètres d'entrée pour Upgrade Health Checker"].
+
+.Étapes
+. Accordez les droits d'exécution au fichier binaire avant de l'exécuter pour la première fois :
++
+[source, cli]
+----
+chmod +x uhc
+----
++
+
+NOTE: Upgrade Health Checker est un package autonome et devra se décompresser avant de s'exécuter. Cela peut prendre quelques secondes.
+
+. Avant de terminer une exécution complète de Upgrade Health Checker, effectuez une vérification approfondie pour vous assurer que l'outil peut se connecter au cluster et aux points de terminaison requis :
++
+[source, cli]
+----
+--test all
+----
++
+La vérification complète garantit que la machine virtuelle hébergeant Upgrade Health Checker a :
+
++
+** Connectivité à l'adresse IP du cluster ONTAP via HTTPS
+** Connectivité au point de terminaison de télémétrie (https://support.netapp.com/[]) via HTTPS
+** Connectivité aux points de terminaison de mise à jour automatique (https://api.uhc.netapp.com[] and https://gql.aiq.netapp.com[]) via HTTPS
+** Au moins 4 Go d `/tmp` espace disponible
+
+
+. (Facultatif) Si vous souhaitez utiliser un fichier de configuration pour stocker les paramètres, renommez le `config.yaml.example` fichier situé au même emplacement que celui où vous avez téléchargé le binaire vers `config.yaml`.
++
+Voici un exemple de fichier config.yaml :
+
++
+[listing]
+----
+# Application Configuration
+APP:
+  RUNS_PATH: "/opt/uhc/runs"
+
+# Cluster Credentials
+CLUSTER:
+  IP: "x.x.x.x"
+  USERNAME: "admin"
+  PASSWORD: "xyz"
+  TARGET_ONTAP_VERSION: ""  # Optional: Specify target ONTAP version (e.g., "9.16.1" or "current" to keep existing version). Leave empty to prompt user.
+  ACCEPT_EULA: false  # Optional: Set to true to accept EULA through config. If false/empty, user will be prompted interactively.
+----
+. Exécutez l'outil de vérification de l'état de la mise à niveau en saisissant la version ONTAP vers laquelle vous souhaitez effectuer la mise à niveau et en acceptant le CLUF, y compris les paramètres supplémentaires nécessaires.
++
+
+NOTE: Le CLUF est un document de plusieurs pages. Saisissez  `all` pour afficher le document complet en une seule fois et saisissez  `y` pour l'accepter.
+
++
+Une fois le journal AutoSupport téléchargé pour un cluster, le traitement prend généralement une à deux minutes selon le nombre de nœuds du cluster. Parce que différentes versions du logiciel ONTAP gèrent la collecte AutoSupport différemment, chaque exécution de l'Upgrade Health Checker dépend de la charge actuelle du cluster et de la version ONTAP en cours.
+
++
+.. Familiarisez-vous avec les paramètres disponibles de l'Upgrade Health Checker, l'ordre de priorité des entrées et les valeurs par défaut de certains paramètres en vous référant à link:upgrade-health-checker-input-parameters.html["Découvrez les paramètres d'entrée pour Upgrade Health Checker"].
++
+Le guide des paramètres d'entrée fournit également des informations sur la spécification d'un chemin de fichier de configuration personnalisé et d'un chemin d'exécution afin d'optimiser votre flux de travail. La bonne pratique consiste à créer un répertoire de sortie personnalisé pour chaque cluster afin d'organiser efficacement vos rapports et journaux.
+
+.. Exécutez l'outil de vérification de l'état de la mise à niveau en acceptant le CLUF et en saisissant la version ONTAP cible ainsi que tous les paramètres supplémentaires.
++
+[source, cli]
+----
+./uhc
+----
+
+
+. Une fois que Upgrade Health Checker a terminé ses vérifications, accédez au dossier  `runs` pour consulter le plan de mise à niveau et le rapport du cluster.
++
+
+NOTE: Chaque exécution du programme constitue une « exécution unique » et comprendra toutes les données, les journaux et les résultats associés dans le dossier  `runs` correspondant.
+
+. Ouvrez le fichier de rapport (nommé `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`) dans un navigateur web pour consulter le rapport. Si vous l'exécutez sur un hôte distant, téléchargez d'abord le fichier de rapport sur une machine où vous pouvez consulter le rapport dans un navigateur web.
++
+Les chemins d'accès au journal et au rapport sont les suivants :
+
++
+** Chemin du journal : `<output-path>/<unique-run-dir>/<cluster-name>/logs`
+** Chemin du rapport `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+
+
+

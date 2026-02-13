@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="ff8b2ca2f375281780741c458550f6b9" category="summary">Vous pouvez automatiser la génération des rapports Upgrade Health Checker afin de réduire vos efforts manuels lors de la planification des mises à niveau ONTAP dans des environnements vastes et complexes.</block>
+  <block id="851802a6ceccf3253b5814d265b9d85f" category="doc">Automatisez la génération de plans de mise à niveau avec Upgrade Health Checker</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Étapes</block>
+  <block id="bb4632cd1e5a77d2d2a6ad9870b1edf3" category="inline-link-macro">Générer un rapport de mise à niveau ONTAP</block>
+  <block id="cbf0409b66c9c191f2bbf7aebb95c7c6" category="list-text">Pour garantir la création réussie de vos rapports de mise à niveau, effectuez toutes les étapes de configuration nécessaires et les tâches ponctuelles décrites dans <block ref="447f94c751f3bc061f73c40c9324c9a3" category="inline-link-macro-rx"></block>.</block>
+  <block id="7c3f7cf7c460927ff3a0856e45060529" category="list-text">Créez un script pour exécuter Upgrade Health Checker avec les paramètres appropriés pour votre environnement.</block>
+  <block id="4a2fc7904851b98a582cefc5576f3c0b" category="paragraph">Voici un exemple de tâche cron qui exécute l'outil du lundi au vendredi à 4 h du matin. Les fichiers binaire et config.yaml ont été installés dans /opt/uhc/tool/.</block>
+  <block id="af6a390b44e1466e540d2c134316ae89" category="paragraph">Script Bash :</block>
+  <block id="a16591c11e618548314d95d8cb9f466c" category="paragraph">Tâche Cron :</block>
+  <block id="4a419eed497d5a9cc6325bd677912447" category="list-text">Une fois que Upgrade Health Checker a terminé ses vérifications, accédez au dossier <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> pour consulter le plan de mise à niveau et le rapport du cluster.</block>
+  <block id="e634565f95b1012e8b64a5e25f71b4d2" category="admonition">Chaque exécution du programme constitue une exécution unique et contiendra toutes les données, les journaux et les résultats associés dans le dossier <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> associé.</block>
+  <block id="f02cb42b34717f58312e87a6c6a3f0b7" category="list-text">Ouvrez le fichier de rapport (nommé<block ref="bc3548bedd723b0ffedd796c759eafb1" prefix=" " category="inline-code"></block>) dans un navigateur web pour consulter le rapport. Si vous exécutez Upgrade Health Checker sur un hôte distant, téléchargez d'abord le fichier de rapport sur un ordinateur où vous pouvez le consulter dans un navigateur web.</block>
+  <block id="4e37054133b8a9e3c2adbe0fdc102c34" category="paragraph">Les chemins d'accès au journal et au rapport sont les suivants :</block>
+  <block id="d4f180313d0c382395fb5552082544bf" category="list-text">Chemin du journal :<block ref="056716fdc8e198679abe9b3946c631cf" prefix=" " category="inline-code"></block></block>
+  <block id="63c8b5222d1ee8d79de6660da3eaef50" category="list-text">Chemin du rapport<block ref="42dfa52dc698f1548746e65dadae2dba" prefix=" " category="inline-code"></block></block>
+  <block id="848fb46d80fa326851b061b6dfad66be" category="summary">Foire aux questions (FAQ) pour Upgrade Health Checker.</block>
+  <block id="2a4d8488d929be6bef9bc441b32078c7" category="doc">FAQ pour le vérificateur d'état de la mise à niveau</block>
+  <block id="9f4e75bee30b521f1814643b0bd0dc50" category="section-title">En quoi Upgrade Health Checker diffère-t-il d'Upgrade Advisor ?</block>
+  <block id="c9a3310bb7166dc242d8db4610b88f5a" category="paragraph">Upgrade Health Checker est un outil installé sur site, adapté aux utilisateurs disposant d'environnements vastes ou complexes, d'un accès limité à Internet ou de frameworks d'automatisation et d'orchestration existants. Upgrade Advisor convient aux utilisateurs avec un environnement plus restreint qui préfèrent une expérience basée sur le cloud et centrée sur l'interface utilisateur.</block>
+  <block id="c71db9cf38a7cbb70d70aff81012ef9c" category="inline-link-macro">Mise à niveau Health Checker</block>
+  <block id="1e3c19e3742fbfc0e6dd22bb91d109a3" category="inline-link-macro">Conseiller de mise à niveau</block>
+  <block id="9e68fe45421fd86216ab2ab40ec2be80" category="paragraph">Vous pouvez en apprendre davantage sur <block ref="0135cdd7de5c710c0abe4fd00f89a624" category="inline-link-macro-rx"></block> et <block ref="c0591f277fe5d470be3ec183cffeb8f2" category="inline-link-macro-rx"></block> pour déterminer quel outil correspond le mieux à vos besoins.</block>
+  <block id="054491cca3f97d47c59c1b49d77b172f" category="section-title">Quelles informations un rapport Upgrade Health Checker inclut-il ?</block>
+  <block id="92134baadd628aac9e12056c62e0dc5e" category="paragraph">Les rapports Upgrade Health Checker fournissent des informations détaillées sur les blocages potentiels et les avertissements qui doivent être pris en compte avant la mise à niveau de vos clusters ONTAP, les risques associés à vos clusters, ainsi que des informations sur les nouvelles fonctionnalités et améliorations de la version ONTAP vers laquelle vous effectuez la mise à niveau.</block>
+  <block id="a17989ff5f0962c2877477c74338ae61" category="section-title">L'outil Upgrade Health Checker peut-il être utilisé sans connexion Internet ?</block>
+  <block id="3880fea319e437eea669686be6861626" category="paragraph">Vous n'avez pas besoin d'une connexion Internet pour exécuter Upgrade Health Checker. Il génère des plans de mise à niveau et des rapports sur site en utilisant les données de configuration actuelles de votre cluster ONTAP.</block>
+  <block id="a6d52acf3204cc6a87bd7aaed6f3eef7" category="paragraph">Cependant, un accès Internet est nécessaire pour les mises à jour automatiques de l'outil. Si votre environnement ne dispose pas de connexion Internet, contactez NetApp pour obtenir des conseils sur la façon de garantir que votre outil Upgrade Health Checker reste à jour.</block>
+  <block id="982d129000c1d3e533f5e8593c670b3d" category="section-title">Quelles versions d'ONTAP sont prises en charge par Upgrade Health Checker ?</block>
+  <block id="4c8d49c7d71cf0e79e3740d7cf67dd62" category="paragraph">Upgrade Health Checker prend en charge les mises à niveau vers ONTAP 9.11.1 et versions ultérieures.</block>
+  <block id="b7c89596c79e950e74638e5d75919aee" category="summary">Vous pouvez utiliser Upgrade Health Checker pour générer un plan de mise à niveau pour un ou plusieurs clusters ONTAP.</block>
+  <block id="a46b239b0ed00e39f2903761716caf03" category="doc">Générez un plan de mise à niveau avec Upgrade Health Checker</block>
+  <block id="e170a21083188ebc6e00ef17f5167dd7" category="inline-link-macro">automatiser la génération de rapports de mise à niveau</block>
+  <block id="7b29ddbb31d8dbabbb6926d591661d76" category="paragraph">Vous pouvez également <block ref="c8a25bc0c3f7d35cbdee90d212a324b8" category="inline-link-macro-rx"></block> pour vous aider à maintenir à jour vos plans de mise à niveau si vous disposez d'un environnement vaste et complexe avec plusieurs clusters.</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">Avant de commencer</block>
+  <block id="71ecafd5cabf66d9de4acfbc15f673f0" category="inline-link-macro">Découvrez les paramètres d'entrée pour Upgrade Health Checker</block>
+  <block id="2aa522fa4ab716ccbf71bb82df8551f0" category="paragraph">Pour en savoir plus sur un paramètre spécifique de Upgrade Health Checker et sur l'ordre de priorité selon laquelle l'outil accepte les entrées, reportez-vous à <block ref="075d48f32d1c61c7bc401a6884f7cf92" category="inline-link-macro-rx"></block>.</block>
+  <block id="a07ce3421753f08f6e19c05607896afb" category="list-text">Accordez les droits d'exécution au fichier binaire avant de l'exécuter pour la première fois :</block>
+  <block id="c2321a704fe7517e5c8db1b11f887bd6" category="admonition">Upgrade Health Checker est un package autonome et devra se décompresser avant de s'exécuter. Cela peut prendre quelques secondes.</block>
+  <block id="42885b6d63050f13b1b1133ef44eb317" category="list-text">Avant de terminer une exécution complète de Upgrade Health Checker, effectuez une vérification approfondie pour vous assurer que l'outil peut se connecter au cluster et aux points de terminaison requis :</block>
+  <block id="a6af1159f5885cc5683819f03f5eba4c" category="paragraph">La vérification complète garantit que la machine virtuelle hébergeant Upgrade Health Checker a :</block>
+  <block id="d333aef011149b38d807ae69b77df0db" category="list-text">Connectivité à l'adresse IP du cluster ONTAP via HTTPS</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
+  <block id="1bda50643710bdee88e5f7b89ecfce86" category="list-text">Connectivité au point de terminaison de télémétrie <block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block>) via HTTPS</block>
+  <block id="684e35b64e667ed5386392f6bc72425b" category="list-text">Connectivité aux points de terminaison de mise à jour automatique <block ref="7b0c3a92f481d16df4dd5efff5f61700" category="inline-link-rx"></block> and<block ref="75a282c90668bc1468d683bacd2cabd2" category="inline-link-rx"></block>) via HTTPS</block>
+  <block id="7694967e044dd1d2923b0cea4e472179" category="list-text">Au moins 4 Go d<block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> espace disponible</block>
+  <block id="727e26a3103d69ba9d982a7013910355" category="list-text">(Facultatif) Si vous souhaitez utiliser un fichier de configuration pour stocker les paramètres, renommez le<block ref="1010e3344617b31dd1b22e5cb7bd6833" prefix=" " category="inline-code"></block> fichier situé au même emplacement que celui où vous avez téléchargé le binaire vers<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block>.</block>
+  <block id="ea20ff07be154a6d361686df025bbc38" category="paragraph">Voici un exemple de fichier config.yaml :</block>
+  <block id="b13d6443b5efce5469e1286fac0475fa" category="list-text">Exécutez l'outil de vérification de l'état de la mise à niveau en saisissant la version ONTAP vers laquelle vous souhaitez effectuer la mise à niveau et en acceptant le CLUF, y compris les paramètres supplémentaires nécessaires.</block>
+  <block id="e1cd167d71886d6214cd69f14f6670c3" category="admonition">Le CLUF est un document de plusieurs pages. Saisissez <block ref="a181a603769c1f98ad927e7367c7aa51" prefix=" " category="inline-code"></block> pour afficher le document complet en une seule fois et saisissez <block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> pour l'accepter.</block>
+  <block id="a7138096e367ba1f9aa626ce742f7a7e" category="paragraph">Une fois le journal AutoSupport téléchargé pour un cluster, le traitement prend généralement une à deux minutes selon le nombre de nœuds du cluster. Parce que différentes versions du logiciel ONTAP gèrent la collecte AutoSupport différemment, chaque exécution de l'Upgrade Health Checker dépend de la charge actuelle du cluster et de la version ONTAP en cours.</block>
+  <block id="ddee22b7e916c6ae2d3106c8d7cfd865" category="list-text">Familiarisez-vous avec les paramètres disponibles de l'Upgrade Health Checker, l'ordre de priorité des entrées et les valeurs par défaut de certains paramètres en vous référant à <block ref="075d48f32d1c61c7bc401a6884f7cf92" category="inline-link-macro-rx"></block>.</block>
+  <block id="06bf55f53800587243aa18867ccc9b0c" category="paragraph">Le guide des paramètres d'entrée fournit également des informations sur la spécification d'un chemin de fichier de configuration personnalisé et d'un chemin d'exécution afin d'optimiser votre flux de travail. La bonne pratique consiste à créer un répertoire de sortie personnalisé pour chaque cluster afin d'organiser efficacement vos rapports et journaux.</block>
+  <block id="bef31ea9ddf34bff75792f2fff0d5cbc" category="list-text">Exécutez l'outil de vérification de l'état de la mise à niveau en acceptant le CLUF et en saisissant la version ONTAP cible ainsi que tous les paramètres supplémentaires.</block>
+  <block id="d35e5d5961dfaa8f5243866aeef147f3" category="admonition">Chaque exécution du programme constitue une « exécution unique » et comprendra toutes les données, les journaux et les résultats associés dans le dossier <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> correspondant.</block>
+  <block id="08e04af94bbf61d680a4a44d4edb4111" category="list-text">Ouvrez le fichier de rapport (nommé<block ref="bc3548bedd723b0ffedd796c759eafb1" prefix=" " category="inline-code"></block>) dans un navigateur web pour consulter le rapport. Si vous l'exécutez sur un hôte distant, téléchargez d'abord le fichier de rapport sur une machine où vous pouvez consulter le rapport dans un navigateur web.</block>
+  <block id="4b88cca218b188588aa2a452e46894da" category="summary">Upgrade Health Checker est un outil de conseil en matière de mise à niveau qui fournit des informations détaillées et des recommandations pour vous aider à mener à bien une mise à niveau ONTAP.</block>
+  <block id="e75e96e756ff4d38a10cdee84526ca22" category="doc">En savoir plus sur Upgrade Health Checker</block>
+  <block id="88e9e7bdabbf15e882c2c1d5c1356ba0" category="paragraph">Upgrade Health Checker est un outil de conseil en matière de mise à niveau qui fournit des informations détaillées et des recommandations pour vous aider à mener à bien une mise à niveau ONTAP. Il effectue des vérifications complètes sur site afin d'identifier les blocages et les avertissements que vous devez résoudre avant de procéder à la mise à niveau.</block>
+  <block id="aa3fb0007a6e493d6ff6af5e4cfd6ea9" category="paragraph">Upgrade Health Checker s'intègre à vos frameworks d'automatisation et d'orchestration existants pour faciliter la mise à niveau d'un ou de plusieurs clusters. Il utilise vos données AutoSupport les plus récentes pour générer un rapport détaillé et précis sur les risques associés à vos clusters, des informations sur les nouvelles fonctionnalités et améliorations de la version ONTAP vers laquelle vous effectuez la mise à niveau, ainsi que sur les actions à entreprendre avant de tenter une mise à niveau ONTAP.</block>
+  <block id="e7a7f914c2fd76fa002667ce774516e8" category="paragraph">Pour en savoir plus sur Upgrade Health Checker, consultez le <block ref="6a92c3eccbf08c1bc6caa0a6e92c02bb" category="inline-link-macro-rx"></block>.</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Mentions légales</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Les mentions légales donnent accès aux déclarations de droits d'auteur, aux marques de commerce, aux brevets et plus encore.</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Copyright</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">Marques déposées</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NETAPP, le logo NETAPP et les marques figurant sur la page NetApp Trademarks sont des marques de NetApp, Inc. Les autres noms de sociétés et de produits peuvent être des marques de leurs propriétaires respectifs.</block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">Brevets</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">Une liste actuelle des brevets détenus par NetApp peut être trouvée à :</block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">Politique de confidentialité</block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">Open source</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">Les fichiers de notification fournissent des informations sur les droits d'auteur et les licences de tiers utilisés dans les logiciels NetApp.</block>
+  <block id="b9497e3cda04aa10a25628bf0b021f6a" category="summary">Vous pouvez télécharger Upgrade Health Checker pour générer des rapports complets sur site avant de passer à une version plus récente d'ONTAP.</block>
+  <block id="ce2d4be7e0d93c8b156f834ce3704614" category="doc">Téléchargez et configurez Upgrade Health Checker</block>
+  <block id="55dcd8cbc9d164986479594db66fd89e" category="paragraph">Configurez une machine virtuelle pour Upgrade Health Checker avec les spécifications suivantes :</block>
+  <block id="cf0860ffd4dc1929d768f74d92735b75" category="list-text">Processeur et mémoire : VM m5.large ou équivalent avec 2 vCPUs et 8 GiB RAM.</block>
+  <block id="c7ca991550b74c4fb5521603081f476c" category="list-text">Système d'exploitation recommandé : Ubuntu 22.04 pour une compatibilité optimale.</block>
+  <block id="28a03eb4af7c5f6abf99620ada6c6cfb" category="list-text">Stockage : Prévoyez un volume racine d’au moins 100 GB et un volume NFS supplémentaire d’au moins 100 GB pour garantir la préservation des données en cas de compromission de la machine virtuelle.</block>
+  <block id="492b15c109a51daa9f89630b4f2bb303" category="list-text">Configuration requise pour l'hébergement : Placez la machine virtuelle dans un emplacement disposant d'une connectivité au cluster et d'un accès Internet afin de permettre les mises à jour automatiques des outils. La machine doit avoir accès aux points de terminaison suivants via HTTPS pour effectuer les mises à jour automatiques :</block>
+  <block id="072b499eacb5befcbdab2d6cc0fe02a0" category="list-text"><block ref="072b499eacb5befcbdab2d6cc0fe02a0" category="inline-link-rx"></block></block>
+  <block id="53fb0fc7c544c164b74ed43fbccd4384" category="list-text"><block ref="53fb0fc7c544c164b74ed43fbccd4384" category="inline-link-rx"></block></block>
+  <block id="907609b93268ffb2d43f03dae5c950a3" category="paragraph">En cas d'absence d'accès à Internet, consultez NetApp pour obtenir des conseils.</block>
+  <block id="ad9d14ce6f324c6a7d87f50e2b156ad7" category="list-text">Paquets recommandés : installez un serveur web pour faciliter l’accès.</block>
+  <block id="222fc917ceda606917084c949d4918ba" category="paragraph">De plus, assurez-vous que la machine virtuelle peut se connecter au point de terminaison de télémétrie <block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block> via HTTPS pour permettre à NetApp de recevoir des informations AutoSupport sur vos plans de mise à niveau.</block>
+  <block id="513157ecd257a5ac15a2bf664400f97e" category="inline-link-macro">accéder au NetApp Console Automation Hub</block>
+  <block id="f7516c48eeea343f7fff7d7edbe475e0" category="list-text">Téléchargez le fichier binaire Upgrade Health Checker en <block ref="d29e77f401a63487e90236d789082319" category="inline-link-macro-rx"></block> trouvant la tuile Upgrade Health Checker.</block>
+  <block id="516fc188e817bb3cd710620ace1129a5" category="list-text">Configurez la machine virtuelle Upgrade Health Checker et utilisez SSH pour placer le binaire à l'emplacement de votre choix.</block>
+  <block id="0243c7349a37a636f0d08348fc2b1ba7" category="list-text">Vérifiez la signature numérique d'Upgrade Health Checker.</block>
+  <block id="2093f13abbe3f1a90a7519a3aba24859" category="paragraph">Upgrade Health Checker possède un certificat de signature de code public <block ref="a1b0111e4810b200f4d7ad5020792ba6" prefix="(" category="inline-code"></block>) et une chaîne de certificats intermédiaires et racine <block ref="2cad9a6c3ca1368f7d8a3bdcbf540946" prefix="(" category="inline-code"></block>).</block>
+  <block id="597feb8bdf5d1ae4b08b4cb86780638e" category="list-text">(Facultatif) Vérifiez le certificat de signature de code par rapport à la chaîne :</block>
+  <block id="b5e84c44aa52f6d62828982b72ecdf65" category="paragraph">Un résultat<block ref="e0aa021e21dddbd6d8cecec71e9cf564" prefix=" " category="inline-code"></block> confirme une chaîne de confiance valide.</block>
+  <block id="e0fa928fd1e2158742a5741790c20b19" category="list-text">Extraire la clé publique du certificat de signature de code :</block>
+  <block id="ef1641ccbd0951e08cb106c8bff6b5ca" category="list-text">Vérifiez le fichier de signature <block ref="9313952cdb30486dd70ab98e98ec59d4" prefix="(" category="inline-code"></block>) par rapport au binaire Upgrade Health Checker à l'aide de la clé publique :</block>
+  <block id="94a2cf0aa74e751f770d9240dcbcb074" category="paragraph">Un résultat de<block ref="33a9cc0739a5a17f65e28cf0b260007f" prefix=" " category="inline-code"></block> confirme que la signature est valide.</block>
+  <block id="9f58de4245b2fb930c02c3766a7ff23f" category="list-text">Configurez un compte de service et un rôle pour l'accès au cluster ONTAP. Pour l'accès au cluster via Upgrade Health Checker, créez le rôle de service en tant que rôle REST.</block>
+  <block id="15ec8997d97cf2ca0a22a65e524b2811" category="admonition">Vous pouvez créer un playbook Ansible pour automatiser le déploiement du rôle et de l'utilisateur sur tous les clusters ONTAP.</block>
+  <block id="d9e228dba301308afb2b46a1a951b363" category="paragraph">Vous devez créer le compte de service pour l'application http. Utilisez les commandes CLI suivantes pour configurer les autorisations nécessaires :</block>
+  <block id="c8bb94969a3153538fe3ed12d5ad5c4f" category="list-text">Mettez en place la gestion des identifiants pour sécuriser l'accès à l'application.</block>
+  <block id="034a1ea726a7fbf3e2fc72fde8ed680d" category="paragraph">Par exemple, si vous avez CyberArk et Conjur, vous pouvez configurer votre environnement pour éviter de transmettre les identifiants via un fichier yaml ou une ligne de commandes.</block>
+  <block id="f2f2f12c645a941c4c701a0ad14f78da" category="list-text">Créer les coffres-forts CyberArk requis :</block>
+  <block id="6fecc57bc25e97c77bad1c6d06e7153d" category="list-text">Créez un Safe (Main-Conjur-Safe) qui contient les identifiants et les secrets de l'application</block>
+  <block id="60e537524e61e7f8a44bad3afa7cd330" category="list-text">Créez un Safe (API-Credentials-Safe) qui contient le Conjur Host ID et la clé API</block>
+  <block id="c4744df02da870bf92d6364705c156b6" category="list-text">Créez un Safe (Conjur-SSL-Certificate) contenant le certificat nécessaire</block>
+  <block id="5afaba9cba7ce8de477f34d11d921a8b" category="list-text">Créez les fichiers de configuration (Conjur.conf) et d'identité (Conjur.identity) pour cette application :</block>
+  <block id="d5d68e242ebd9c5985b84661af24defa" category="list-text">Conjur.conf</block>
+  <block id="492114e082b9c7b687636701e7279aad" category="list-text">Conjur.identity</block>
+  <block id="f6b48feed8edaa886804f4713f44bc3f" category="paragraph">Voici un exemple d'utilisation de CyberArk et Conjur dans un playbook Ansible :</block>
+  <block id="1ae7cfb9fd42c03ec54a7688f331a4ca" category="list-text">Installez Conjur Ansible Collection, qui inclut le Conjur Ansible Lookup Plugin, sur l'hôte Ansible :</block>
+  <block id="17ce5fd52d97f9d44f60001292f0ece9" category="list-text">Créez une tâche dans un fichier yaml pour récupérer le nom d'utilisateur et le mot de passe depuis CyberArk :</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">Et ensuite ?</block>
+  <block id="ec6bec433b1c1808064b71c6aaa7fd9e" category="inline-link-macro">génération d'un rapport de mise à niveau</block>
+  <block id="4f3f18c8e521db17af2095588dd0cdbf" category="paragraph">Vous pouvez utiliser Upgrade Health Checker pour vous aider à planifier une mise à niveau ONTAP en <block ref="4e7536d9527fcd8654c1859f9106fb67" category="inline-link-macro-rx"></block>.</block>
+  <block id="d10ee20124c466f6b668c45ea930a323" category="summary">Vous pouvez en apprendre davantage sur les paramètres d'entrée de Upgrade Health Checker pour vous aider à générer un rapport de mise à niveau pour votre cluster ONTAP.</block>
+  <block id="d53948ce39f427fd80052ec24da98866" category="paragraph">Vous pouvez en apprendre davantage sur les paramètres d'entrée de Upgrade Health Checker et sur la manière de les fournir via des arguments de ligne de commande, des fichiers de configuration ou des invites interactives pour vous aider à générer un rapport de mise à niveau pour votre cluster ONTAP.</block>
+  <block id="c238922030faaf9e95ce23006b54c970" category="section-title">Priorité des méthodes de saisie</block>
+  <block id="323e191b40ba0123a2776c0baa05f62d" category="paragraph">Upgrade Health Checker propose plusieurs options de saisie pour tous les paramètres. Son ordre de priorité pour la saisie des données est :</block>
+  <block id="1fb1195510f62422257687634f390233" category="list-text">Arguments de l'interface de ligne de commande (priorité la plus élevée)</block>
+  <block id="4618fc736ac21a53b35ec29bf995ebbf" category="list-text">Fichier de configuration <block ref="259fe82e12a866f01123927480c7851b" prefix="(" category="inline-code"></block>)</block>
+  <block id="c02c10c922768d8394a86135898f5619" category="list-text">Invite interactive (priorité la plus basse)</block>
+  <block id="7556c6dfaef1a610d641f1e06894a16a" category="paragraph">Lorsqu'un paramètre est fourni par plusieurs méthodes, l'outil utilisera la valeur provenant de la source la plus prioritaire.</block>
+  <block id="476013e859f7d89de288df5624801703" category="section-title">Paramètres d'entrée</block>
+  <block id="70087224b93e8179deda7438fae8e843" category="section-title">IP de cluster</block>
+  <block id="c75506e8c50acab63ae245a1d7b0b5c1" category="paragraph">Le <block ref="f844f00636430f7720fd87f6324b3230" prefix=" " category="inline-code"></block>paramètre spécifie l'adresse IP ou le nom d'hôte du cluster ONTAP auquel se connecter.</block>
+  <block id="46fe8388c120f6b58048d1a018a6afd3" category="paragraph">L'ordre de priorité pour la fourniture de ce paramètre est :</block>
+  <block id="4cf6ec16bbc58d590a5ed5d604261c0d" category="list-text">Argument CLI<block ref="f844f00636430f7720fd87f6324b3230" prefix=" " category="inline-code"></block></block>
+  <block id="64695ef09ae96408388cbedcf0383906" category="list-text">Fichier de configuration<block ref="14e9ea31f56781fd98b7fd89ec2103d2" prefix=" " category="inline-code"></block></block>
+  <block id="2d87557ac59d802428f55e71d23090c2" category="list-text">Invite interactive</block>
+  <block id="ff7c0fcd6a31e735a61c001f75426961" category="example-title">Exemples</block>
+  <block id="4b2752f3b0cff1b050f607eb588b1cf5" category="list-text">Argument CLI :</block>
+  <block id="8705ee9dda5db66410c43280483663ae" category="paragraph"><block ref="633644433d59e911bf24e3ee42026f1c" prefix="" category="inline-code"></block></block>
+  <block id="99d90ff55a2bcc2901f33c70d5da4557" category="list-text">Config.yaml :</block>
+  <block id="e48417b724fe79f0e05bc8d1f1e96bf6" category="list-text">Mode interactif (si non fourni ci-dessus):</block>
+  <block id="7cc488682e6e08d5b9cba7f0fd635b96" category="paragraph">L’outil affichera :<block ref="b8c8be6f0464c4f81abdce849becc93a" prefix=" " category="inline-code"></block></block>
+  <block id="ff7fcd640932394a53f74f04125835e1" category="section-title">Nom d'utilisateur du cluster</block>
+  <block id="3f6db82e6215144725062caff32e00c1" category="paragraph">Le <block ref="8e9924bb9831f9d205b67adb9aa9c89c" prefix=" " category="inline-code"></block>paramètre spécifie le nom d'utilisateur pour l'authentification avec le cluster ONTAP.</block>
+  <block id="ec0729156f9c9d375c3a86407ed5d613" category="list-text">Argument CLI :<block ref="8e9924bb9831f9d205b67adb9aa9c89c" prefix=" " category="inline-code"></block></block>
+  <block id="1f919129381394e32842e43afcf7e6d0" category="list-text">Fichier de configuration<block ref="115e9f5736e67868a412e572990da972" prefix=" " category="inline-code"></block></block>
+  <block id="369eab05dd6d1b73169df19ea569f4a5" category="paragraph"><block ref="e5dd3266ede07087bef357c74c6fa8fc" prefix="" category="inline-code"></block></block>
+  <block id="9732567210f4e95a69f5c98223b32c6d" category="paragraph">L’outil affichera :<block ref="0ded070da67db9d7009666ba2c8c4582" prefix=" " category="inline-code"></block></block>
+  <block id="0c191ee206a91460fd94e2ff976a38e7" category="section-title">Mot de passe du cluster</block>
+  <block id="0d0af704398a96addaa3af129dd6fa84" category="paragraph">Le <block ref="3bd841f8e7ecc1cb3406ab1cec889115" prefix=" " category="inline-code"></block>paramètre spécifie le mot de passe pour l'authentification avec le cluster ONTAP.</block>
+  <block id="5b0d42d6408e4c88dd02bd1617fc7599" category="list-text">Argument CLI :<block ref="3bd841f8e7ecc1cb3406ab1cec889115" prefix=" " category="inline-code"></block></block>
+  <block id="247c9e53ad680999bd6359f61f1efa15" category="list-text">Fichier de configuration<block ref="b3a147e2cf79950f6952976c2b24b015" prefix=" " category="inline-code"></block></block>
+  <block id="9a04c5073fe87df0927bccdb06b7784b" category="list-text">Invite interactive (saisie sécurisée)</block>
+  <block id="127b88eddfd104f63a7996f7315ab36d" category="list-text">Argument de ligne de commande (non recommandé pour la sécurité) :</block>
+  <block id="02796d68d841681536e55aa84501a5e0" category="paragraph"><block ref="4491732129e2c8fa117ab30f9c69fc79" prefix="" category="inline-code"></block></block>
+  <block id="5959717273c29c4753bb94cb3a9784e2" category="list-text">Config.yaml (veillez à restreindre les permissions du fichier) :</block>
+  <block id="a9095116df40436c4ef219e805c345ee" category="list-text">Mode interactif (recommandé - mot de passe masqué):</block>
+  <block id="f5001e8cc356cc13693228d3976db02a" category="paragraph">L'outil affichera le message suivant :<block ref="c5937dba7ed853571bb7b6e83e54f40e" prefix=" " category="inline-code"></block></block>
+  <block id="6bb3222dda6de7575b34020a07187451" category="section-title">Version ONTAP cible</block>
+  <block id="6fdcd93cab77d35597a1dc0faea379fb" category="paragraph">Le <block ref="8fea203bf97a25109f25c0a37994e292" prefix=" " category="inline-code"></block>paramètre spécifie la version ONTAP vers laquelle vous souhaitez effectuer la mise à niveau pour l'analyse. Utilisez « current » pour conserver la version ONTAP actuelle du cluster.</block>
+  <block id="5c2d47f6fb85e702b227699b1e2b7e00" category="list-text">Argument CLI<block ref="8fea203bf97a25109f25c0a37994e292" prefix=" " category="inline-code"></block></block>
+  <block id="bd251e17c91b23ef60ed75bf80817074" category="list-text">Fichier de configuration<block ref="2271a79660cb8125d47a4eb72c5dc9b9" prefix=" " category="inline-code"></block></block>
+  <block id="e45a983c88b69f722274f95dbaf85607" category="list-text">Menu de sélection interactif</block>
+  <block id="a8cdf50950825af99fb80665a9db4299" category="paragraph">Version mise à jour d'ONTAP<block ref="235e540a452b98abb270417100e3aad0" prefix=" " category="inline-code"></block></block>
+  <block id="fec7f84e2641348d1dacfe1ac269f4aa" category="paragraph">Conservez la version actuelle d'ONTAP<block ref="992866f5dcd6092ba3e5e63156bd6c12" prefix=" " category="inline-code"></block></block>
+  <block id="29d64e316e6219a7a595656472fc4bb7" category="paragraph">L'outil affichera les versions disponibles et invitera à la sélection</block>
+  <block id="9ffbe169b7db1bee5ce86eb6d1e15a5f" category="section-title">Accepter le CLUF</block>
+  <block id="354de4470baa97b0784285a30191cad9" category="paragraph">Le<block ref="c4e1b5b89a32724aede5f2b9687d32b0" prefix=" " category="inline-code"></block> paramètre spécifie s'il faut accepter le contrat de licence utilisateur final. Doit être défini sur<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> pour continuer.</block>
+  <block id="4bcdff40c528c94a3ac33fceac0ae5c7" category="list-text">Argument CLI<block ref="c4e1b5b89a32724aede5f2b9687d32b0" prefix=" " category="inline-code"></block></block>
+  <block id="04a7a851ba6ccfc3c862e280dff9d47a" category="list-text">Fichier de configuration<block ref="9e5121ad073324f8fac5f124152a97f5" prefix=" " category="inline-code"></block></block>
+  <block id="c216150692debe7132587c2b181f4aef" category="paragraph"><block ref="2716072d4c7e90df917c2ed9fa2abf9e" prefix="" category="inline-code"></block></block>
+  <block id="f4de0242a000b8295d35188be2e824b2" category="paragraph">L'outil affichera le CLUF et vous demandera de l'accepter</block>
+  <block id="75b0c2229298fb17b407a9d0da5c9c9a" category="section-title">chemin du fichier de configuration</block>
+  <block id="6bf36f6a417be822fcc03507ba0f2006" category="paragraph">Le <block ref="aa0d829d2fcb248ba06549edc2bd07ac" prefix=" " category="inline-code"></block>paramètre spécifie le chemin d'accès à un fichier YAML de configuration personnalisé.</block>
+  <block id="80c59ccf1fb0819c3f4ccd508dbec2f4" category="list-text">Argument CLI<block ref="aa0d829d2fcb248ba06549edc2bd07ac" prefix=" " category="inline-code"></block> :</block>
+  <block id="505c939cebf726feebd6fc21d6bf7984" category="list-text">Défaut:<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block></block>
+  <block id="d7cc232149069938fc37cdf71c773fbb" category="paragraph"><block ref="a2f5bccf595b68d5e02be2530bda057a" prefix="" category="inline-code"></block></block>
+  <block id="8ad3c6f951b4045f04413eec3b7922c4" category="list-text">Par défaut (si non fourni):</block>
+  <block id="a6a868631bba716656e3740af43fa00a" category="paragraph">L'outil recherchera config.yaml dans le répertoire actuel</block>
+  <block id="cabfa16fb44ee4ead33f8423edc88b13" category="section-title">Chemin de sortie d’exécution</block>
+  <block id="a9e5390a602948699327340c04cc6377" category="paragraph">Le <block ref="0b5540609e2d46235709175fd8e2693b" prefix=" " category="inline-code"></block>paramètre spécifie un répertoire personnalisé pour stocker les résultats d'exécution et les rapports.</block>
+  <block id="dee6a3a660575ea189bf39e25c743edd" category="list-text">Argument CLI:<block ref="0b5540609e2d46235709175fd8e2693b" prefix=" " category="inline-code"></block></block>
+  <block id="4c24c0554e450c08504c393b159e47d7" category="list-text">Fichier de configuration<block ref="fe00e5cee944304042641fe263ea293d" prefix=" " category="inline-code"></block></block>
+  <block id="06d1d87ce6d9bd664108e7dc9dc78f5a" category="list-text">Défaut:<block ref="c3edf6fb65df0152ea3db49d109d41f0" prefix=" " category="inline-code"></block></block>
+  <block id="6586cf31274f0b98c03ba1e36f40f3da" category="paragraph"><block ref="8e3bb742ea380a81db12a3fd40bc3db3" prefix="" category="inline-code"></block></block>
+  <block id="dadb196e65d9623c2742a0077f0fce83" category="paragraph">L'outil utilisera <block ref="c3edf6fb65df0152ea3db49d109d41f0" prefix=" " category="inline-code"></block> répertoire</block>
+  <block id="5830703e51e0e0d6534107242f258d4c" category="section-title">Ignorer la vérification de compatibilité</block>
+  <block id="72818ddc455895483f200f3ba5a8231e" category="paragraph">Le <block ref="66a905f649ae7fc669e70a476c6631c3" prefix=" " category="inline-code"></block>paramètre contourne les vérifications de compatibilité matérielle et utilise la version d'ONTAP vers laquelle vous souhaitez effectuer la mise à niveau.</block>
+  <block id="e2f03f072c7c52e0c11a31e688f75d0c" category="admonition">N’utilisez cette option que si vous êtes certain que la version ONTAP cible est compatible avec votre matériel.</block>
+  <block id="5abcb79d38d8843ecfc75361c67dda7d" category="list-text">Argument CLI:<block ref="66a905f649ae7fc669e70a476c6631c3" prefix=" " category="inline-code"></block></block>
+  <block id="d435f573d6c2d377c4f8b7c27fad0f8b" category="list-text">Fichier de configuration<block ref="c7bcd33a8fcd39b481e4afa17e20c6fe" prefix=" " category="inline-code"></block></block>
+  <block id="98277f883ea7a0cc9b33c29219b90421" category="list-text">Défaut:<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block></block>
+  <block id="57443621322267804eb3eb209a7177d6" category="paragraph"><block ref="f61062a0552c0603acf718c601358cd2" prefix="" category="inline-code"></block></block>
+  <block id="b100fd455b43434a4fe5f09de5b31e2c" category="section-title">Désactiver la télémétrie</block>
+  <block id="32037ceaa25ee46f50c49eafc2ece95f" category="paragraph">Pour désactiver la télémétrie, ajoutez ce qui suit à votre <block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block> fichier :</block>
+  <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">Désactiver les mises à jour automatiques</block>
+  <block id="310675af32778e28645e16942a8f604d" category="paragraph">Pour désactiver les mises à jour automatiques pour Upgrade Health Checker, ajoutez ce qui suit à votre <block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block> fichier :</block>
+  <block id="bfbc4b4e9ef684fdccbf4518a5a9d2b7" category="section-title">Exemples utilisant chaque méthode de saisie</block>
+  <block id="f232d111a794eb5f37dffe4641d22bfe" category="section-title">Arguments CLI combinés</block>
+  <block id="5363982494efe20879ee60ad65e0ad59" category="section-title">fichier Config.yaml</block>
+  <block id="c66f19bf3e23bb1d8f53417edec7a608" category="section-title">Mode interactif</block>
+  <block id="61ff0695e48b9e7fcc7c4c62527dd02a" category="paragraph">Pour demander tous les paramètres d'entrée requis de manière interactive, exécutez Upgrade Health Checker sans arguments :</block>
+  <block id="3a7013200321f0af417defd7253a0867" category="section-title">Commandes supplémentaires</block>
+  <block id="0b5a1f22b334d555e2c35ceb23b9e08a" category="paragraph">Ces commandes offrent des fonctionnalités supplémentaires au-delà de l'exécution complète de l'outil :</block>
+  <block id="aaf12997ac25ce871e8b4969dfada046" category="list-text">Afficher l'aide</block>
+  <block id="829bc0a083ea00ab6a64abe899ca0047" category="paragraph"><block ref="42e4e03a7fe5f67a66f1b92d7683bbb9" prefix="" category="inline-code"></block></block>
+  <block id="77fd00c3b3d01651b63a258dbc2f05b1" category="list-text">Afficher la version</block>
+  <block id="c1cf9a31e27add8a5df5f609125770a1" category="paragraph"><block ref="262a2406c2bbf20f92a5689bf92413cd" prefix="" category="inline-code"></block></block>
+  <block id="897f3d371462811c080a4f5edafdb445" category="list-text">Testez la connectivité du cluster</block>
+  <block id="9f75c9be5a88eae06a5482c0c8635a02" category="paragraph"><block ref="f609451ce7593e4800e051b5d8df3dee" prefix="" category="inline-code"></block></block>
+  <block id="a53c09b10d81119ee734f13db16b5b60" category="list-text">Testez la connectivité de télémétrie</block>
+  <block id="07e4cd8bb717fc56dd8f24955a8f0a97" category="paragraph"><block ref="1f4e0132b734770ea37d56fa1eab8378" prefix="" category="inline-code"></block></block>
+  <block id="2a2202c6cb59da36d2f1144002727949" category="list-text">Tester la connectivité de mise à jour automatique</block>
+  <block id="ef19d0479cab89428496031fdd78325d" category="paragraph"><block ref="c6246d591d6aa8f51360f3fc1fb73099" prefix="" category="inline-code"></block></block>
+  <block id="1691b00c4db1feb3956ab3c4a26a95aa" category="list-text">Exécuter tous les tests</block>
+  <block id="896cc7fe61fff04a98ca32ae4ff2f38e" category="paragraph"><block ref="ae6aeb5ef90dc9dd427032fc8f9f6fe3" prefix="" category="inline-code"></block></block>
+  <block id="daad4dadeda8cd86f01c8ad7f2a30465" category="summary">Découvrez les nouveautés de ce site de documentation.</block>
+  <block id="a8324b80938b67ec782deb0221494038" category="doc">Quoi de neuf dans Upgrade Health Checker</block>
+  <block id="984ed907e956f5ada3f813bd4a802fd2" category="inline-link-macro">Hub d'automatisation NetApp Console</block>
+  <block id="28418efc88b69f5e65f0a85f816e9eea" category="paragraph">Découvrez les nouveautés de Upgrade Health Checker. Vous pouvez trouver des informations supplémentaires sur les améliorations en accédant à la vignette Upgrade Health Checker dans le <block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block> et en consultant les derniers fichiers de téléchargement Upgrade Health Checker.</block>
+  <block id="70d92c1e2419b7500249e84f56bfda5d" category="section-title">12 février 2026</block>
+  <block id="ae47874d4e80f14ff840114a5af1558e" category="paragraph">Upgrade Health Checker offre une nouvelle solution pour générer des rapports complets sur site afin de vous permettre de mener à bien une mise à niveau ONTAP. Il peut être utilisé avec les frameworks d'automatisation et d'orchestration existants pour améliorer l'efficacité lors de la mise à niveau d'un ou de plusieurs clusters. Upgrade Health Checker prend en charge les mises à niveau vers ONTAP 9.11.1 et versions ultérieures.</block>
+  <block id="ba6d627457ce6f12fac3776c3f84b9f5" category="inline-link-macro">En savoir plus sur Upgrade Health Checker</block>
+  <block id="c2da3472d13132f746797e82ab607214" category="paragraph"><block ref="311172ef496e6974c00a808505e30585" category="inline-link-macro-rx"></block>.</block>
+  <block id="6e777a6e34571fc72776d25b82dfacec" category="sidebar">Upgrade Health Checker effectue des contrôles de santé complets pour vous aider à planifier et à réaliser une mise à niveau ONTAP réussie.</block>
+  <block id="fd88efe65babf49c3738468cf7693090" category="sidebar">Mettre à jour la documentation Health Checker</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Commencer</block>
+  <block id="b90d5d04488d396d7b7e8b456398412c" category="sidebar">Configurer Upgrade Health Checker</block>
+  <block id="e28bd5f4fde7913aca83e892e7ffda0a" category="sidebar">Utilisez Upgrade Health Checker</block>
+  <block id="514c14b02caf403ad003cd6f6072c8d1" category="sidebar">Automatisez la génération de rapports</block>
+  <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">Ressources supplémentaires</block>
+  <block id="a3c4408acdfc01e2ed1bf7df24ffcfbd" category="sidebar">Documentation Upgrade Advisor</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">Notes de version</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Quoi de neuf</block>
+  <block id="6ba8c57dc65e01916d692a44ff09f37a" category="sidebar">Paramètres d'entrée pour Upgrade Health Checker</block>
+  <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">FAQ</block>
+</blocks>

@@ -1,0 +1,29 @@
+---
+indexpage:
+  title: Mettre à jour la documentation Health Checker
+  summary: Upgrade Health Checker effectue des contrôles de santé complets pour vous
+    aider à planifier et à réaliser une mise à niveau ONTAP réussie.
+  keywords: upgrade health checker, ontap, upgrade advisor
+  lead: Upgrade Health Checker effectue des contrôles de santé complets pour vous
+    aider à planifier et à réaliser une mise à niveau ONTAP réussie.
+  tiles:
+  - title: Commencer
+    links:
+    - title: En savoir plus sur Upgrade Health Checker
+      url: learn-about-upgrade-health-checker.html
+    - title: Configurer Upgrade Health Checker
+      url: set-up-upgrade-health-checker.html
+  - title: Utilisez Upgrade Health Checker
+    links:
+    - title: Générer un rapport de mise à niveau ONTAP
+      url: generate-report-upgrade-health-checker.html
+    - title: Automatisez la génération de rapports
+      url: automate-report-upgrade-health-checker.html
+  - title: Ressources supplémentaires
+    links:
+    - title: Découvrez les paramètres d'entrée pour Upgrade Health Checker
+      url: upgrade-health-checker-input-parameters.html
+    - title: FAQ pour le vérificateur d'état de la mise à niveau
+      url: faq.html
+    - title: Documentation Upgrade Advisor
+      url: https://docs.netapp.com/us-en/active-iq/upgrade_advisor_overview.html

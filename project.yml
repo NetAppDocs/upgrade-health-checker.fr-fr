@@ -1,0 +1,35 @@
+---
+settings:
+  name: Upgrade Health Checker
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: fr-fr,us-en,de-de,es-es,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: Mettre à jour la documentation Health Checker
+    url: "/index.html"
+  - title: Notes de version
+    entries:
+    - title: Quoi de neuf
+      url: "/whats-new.html"
+  - title: Commencer
+    entries:
+    - title: En savoir plus sur Upgrade Health Checker
+      url: "/learn-about-upgrade-health-checker.html"
+    - title: Configurer Upgrade Health Checker
+      url: "/set-up-upgrade-health-checker.html"
+  - title: Utilisez Upgrade Health Checker
+    entries:
+    - title: Générer un rapport de mise à niveau ONTAP
+      url: "/generate-report-upgrade-health-checker.html"
+    - title: Automatisez la génération de rapports
+      url: "/automate-report-upgrade-health-checker.html"
+  - title: Paramètres d'entrée pour Upgrade Health Checker
+    url: "/upgrade-health-checker-input-parameters.html"
+  - title: FAQ
+    url: "/faq-upgrade-health-checker.html"
+  - title: Mentions légales
+    url: "/legal-notices.html"
