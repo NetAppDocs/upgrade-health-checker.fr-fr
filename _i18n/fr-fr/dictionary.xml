@@ -4,7 +4,6 @@
   <block id="851802a6ceccf3253b5814d265b9d85f" category="doc">Automatisez la génération de plans de mise à niveau avec Upgrade Health Checker</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Étapes</block>
   <block id="bb4632cd1e5a77d2d2a6ad9870b1edf3" category="inline-link-macro">Générer un rapport de mise à niveau ONTAP</block>
-  <block id="cbf0409b66c9c191f2bbf7aebb95c7c6" category="list-text">Pour garantir la création réussie de vos rapports de mise à niveau, effectuez toutes les étapes de configuration nécessaires et les tâches ponctuelles décrites dans <block ref="447f94c751f3bc061f73c40c9324c9a3" category="inline-link-macro-rx"></block>.</block>
   <block id="7c3f7cf7c460927ff3a0856e45060529" category="list-text">Créez un script pour exécuter Upgrade Health Checker avec les paramètres appropriés pour votre environnement.</block>
   <block id="4a2fc7904851b98a582cefc5576f3c0b" category="paragraph">Voici un exemple de tâche cron qui exécute l'outil du lundi au vendredi à 4 h du matin. Les fichiers binaire et config.yaml ont été installés dans /opt/uhc/tool/.</block>
   <block id="af6a390b44e1466e540d2c134316ae89" category="paragraph">Script Bash :</block>
@@ -26,7 +25,6 @@
   <block id="92134baadd628aac9e12056c62e0dc5e" category="paragraph">Les rapports Upgrade Health Checker fournissent des informations détaillées sur les blocages potentiels et les avertissements qui doivent être pris en compte avant la mise à niveau de vos clusters ONTAP, les risques associés à vos clusters, ainsi que des informations sur les nouvelles fonctionnalités et améliorations de la version ONTAP vers laquelle vous effectuez la mise à niveau.</block>
   <block id="a17989ff5f0962c2877477c74338ae61" category="section-title">L'outil Upgrade Health Checker peut-il être utilisé sans connexion Internet ?</block>
   <block id="3880fea319e437eea669686be6861626" category="paragraph">Vous n'avez pas besoin d'une connexion Internet pour exécuter Upgrade Health Checker. Il génère des plans de mise à niveau et des rapports sur site en utilisant les données de configuration actuelles de votre cluster ONTAP.</block>
-  <block id="a6d52acf3204cc6a87bd7aaed6f3eef7" category="paragraph">Cependant, un accès Internet est nécessaire pour les mises à jour automatiques de l'outil. Si votre environnement ne dispose pas de connexion Internet, contactez NetApp pour obtenir des conseils sur la façon de garantir que votre outil Upgrade Health Checker reste à jour.</block>
   <block id="982d129000c1d3e533f5e8593c670b3d" category="section-title">Quelles versions d'ONTAP sont prises en charge par Upgrade Health Checker ?</block>
   <block id="4c8d49c7d71cf0e79e3740d7cf67dd62" category="paragraph">Upgrade Health Checker prend en charge les mises à niveau vers ONTAP 9.11.1 et versions ultérieures.</block>
   <block id="b7c89596c79e950e74638e5d75919aee" category="summary">Vous pouvez utiliser Upgrade Health Checker pour générer un plan de mise à niveau pour un ou plusieurs clusters ONTAP.</block>
@@ -232,4 +230,6 @@
   <block id="6ba8c57dc65e01916d692a44ff09f37a" category="sidebar">Paramètres d'entrée pour Upgrade Health Checker</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">FAQ</block>
   <block id="d8f8bff1a4b83b3c4aa6b4284a2e39c2" category="section-title">13 février 2026</block>
+  <block id="f245d5b92eabff0d1c1d1e41530987d0" category="list-text">Pour garantir la création réussie de vos rapports de mise à niveau, effectuez toutes les étapes de configuration nécessaires et les tâches ponctuelles décrites dans <block ref="6489edbb98d22789fa797cea6950f9bd" category="inline-link-macro-rx"></block>.</block>
+  <block id="4a5a50ece5ac2f055b9ecb1ac0f449f2" category="paragraph">Toutefois, un accès Internet est requis pour les mises à jour automatiques de l'outil. Si votre environnement ne dispose pas de connexion Internet, vous pouvez télécharger manuellement la dernière version de l'outil depuis la vignette Upgrade Health Checker sur le <block ref="886a64ecc1d4032be9eb5d1da893e684" category="inline-link-macro-rx"></block>.</block>
 </blocks>
