@@ -15,11 +15,20 @@ summary: 'Vous pouvez télécharger Upgrade Health Checker pour générer des ra
 [role="lead"]
 Vous pouvez télécharger Upgrade Health Checker pour générer des rapports complets sur site avant de passer à une version plus récente d'ONTAP.
 
+.À propos de cette tâche
+Upgrade Health Checker prend en charge les mises à niveau pour les versions ONTAP sur site 9.11.1 et ultérieures. Si vous utilisez Cloud Volumes ONTAP, consultez link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html#supported-upgrade-paths["Mettre à niveau Cloud Volumes ONTAP"] pour obtenir des informations sur la mise à niveau de votre système.
+
 .Avant de commencer
 Configurez une machine virtuelle pour Upgrade Health Checker avec les spécifications suivantes :
 
 * Processeur et mémoire : VM m5.large ou équivalent avec 2 vCPUs et 8 GiB RAM.
-* Système d'exploitation recommandé : Ubuntu 22.04 pour une compatibilité optimale.
+* Système d'exploitation recommandé : tout système d'exploitation Linux doté de la bibliothèque glibc version 2.28 ou supérieure pour une compatibilité optimale. Cela inclut :
++
+** Ubuntu 22.04
+** RHEL8
+** RHEL9
+
+
 * Stockage : Prévoyez un volume racine d’au moins 100 GB et un volume NFS supplémentaire d’au moins 100 GB pour garantir la préservation des données en cas de compromission de la machine virtuelle.
 * Configuration requise pour l'hébergement : Placez la machine virtuelle dans un emplacement disposant d'une connectivité au cluster et d'un accès Internet afin de permettre les mises à jour automatiques des outils. La machine doit avoir accès aux points de terminaison suivants via HTTPS pour effectuer les mises à jour automatiques :
 +
@@ -92,7 +101,7 @@ security login create -user-or-group-name uhctool -role uhctool -application htt
 
 security login create -user-or-group-name uhctool -role uhctool -application ssh -authentication-method password
 ----
-. Mettez en place la gestion des identifiants pour sécuriser l'accès à l'application.
+. (Facultatif) Configurez la gestion des identifiants pour sécuriser l'accès à l'application.
 +
 Par exemple, si vous avez CyberArk et Conjur, vous pouvez configurer votre environnement pour éviter de transmettre les identifiants via un fichier yaml ou une ligne de commandes.
 
