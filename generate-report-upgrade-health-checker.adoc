@@ -45,8 +45,8 @@ La vérification complète garantit que la machine virtuelle hébergeant Upgrade
 
 +
 ** Connectivité à l'adresse IP du cluster ONTAP via HTTPS
-** Connectivité au point de terminaison de télémétrie (https://support.netapp.com/[]) via HTTPS
-** Connectivité aux points de terminaison de mise à jour automatique (https://api.uhc.netapp.com[] and https://gql.aiq.netapp.com[]) via HTTPS
+** Connectivité au point de terminaison de télémétrie (https://support.netapp.com/[] et https://api.activeiq.netapp.com[]) via HTTPS
+** Connectivité aux points de terminaison de mise à jour automatique (https://api.uhc.netapp.com[], https://gql.aiq.netapp.com[], et https://api.activeiq.netapp.com[]) via HTTPS (443)
 ** Au moins 4 Go d `/tmp` espace disponible
 
 
@@ -95,13 +95,15 @@ Le guide des paramètres d'entrée fournit également des informations sur la sp
 
 NOTE: Chaque exécution du programme constitue une « exécution unique » et comprendra toutes les données, les journaux et les résultats associés dans le dossier  `runs` correspondant.
 
-. Ouvrez le fichier de rapport (nommé `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`) dans un navigateur web pour consulter le rapport. Si vous l'exécutez sur un hôte distant, téléchargez d'abord le fichier de rapport sur une machine où vous pouvez consulter le rapport dans un navigateur web.
+. Ouvrez le fichier de rapport (nommé  `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`) dans un navigateur web, Microsoft Excel ou un visualiseur JSON pour consulter le rapport. Si vous l'exécutez sur un hôte distant, téléchargez d'abord le fichier de rapport sur une machine où vous pourrez le consulter dans un navigateur web, dans Excel ou dans un visualiseur JSON.
 +
 Les chemins d'accès au journal et au rapport sont les suivants :
 
 +
 ** Chemin du journal : `<output-path>/<unique-run-dir>/<cluster-name>/logs`
-** Chemin du rapport `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Chemin d'accès au rapport HTML : `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Chemin d'accès au rapport Excel : `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.xlsx`
+** Chemin du rapport JSON : `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.json`
 
 
 

@@ -58,13 +58,15 @@ Tâche Cron :
 
 NOTE: Chaque exécution du programme constitue une exécution unique et contiendra toutes les données, les journaux et les résultats associés dans le dossier  `runs` associé.
 
-. Ouvrez le fichier de rapport (nommé `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`) dans un navigateur web pour consulter le rapport. Si vous exécutez Upgrade Health Checker sur un hôte distant, téléchargez d'abord le fichier de rapport sur un ordinateur où vous pouvez le consulter dans un navigateur web.
+. Ouvrez le fichier de rapport (nommé  `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`) dans un navigateur web, Microsoft Excel ou un visualiseur JSON pour consulter le rapport. Si vous exécutez Upgrade Health Checker sur un hôte distant, téléchargez d'abord le fichier de rapport sur un ordinateur où vous pourrez le consulter dans un navigateur web, dans Excel ou dans un visualiseur JSON.
 +
 Les chemins d'accès au journal et au rapport sont les suivants :
 
 +
 ** Chemin du journal : `<output-path>/<unique-run-dir>/<cluster-name>/logs`
-** Chemin du rapport `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Chemin d'accès au rapport HTML : `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Chemin d'accès au rapport Excel : `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.xlsx`
+** Chemin du rapport JSON : `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.json`
 
 
 
