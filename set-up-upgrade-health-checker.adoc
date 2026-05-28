@@ -32,9 +32,9 @@ Configurez une machine virtuelle pour Upgrade Health Checker avec les spécifica
 * Stockage : Prévoyez un volume racine d’au moins 100 GB et un volume NFS supplémentaire d’au moins 100 GB pour garantir la préservation des données en cas de compromission de la machine virtuelle.
 * Configuration requise pour l'hébergement : placez la machine virtuelle dans un emplacement disposant d'une connectivité au cluster et d'un accès Internet afin de permettre les mises à jour automatiques des outils. La machine doit pouvoir accéder aux points de terminaison suivants via HTTPS (443) pour effectuer ces mises à jour automatiques :
 +
-** https://api.uhc.netapp.com[]
-** https://gql.aiq.netapp.com[]
-** https://api.activeiq.netapp.com[]
+** +https://api.uhc.netapp.com+
+** +https://gql.aiq.netapp.com+
+** +https://api.activeiq.netapp.com+
 +
 En cas d'absence d'accès à Internet, consultez NetApp pour obtenir des conseils.
 
@@ -43,7 +43,7 @@ En cas d'absence d'accès à Internet, consultez NetApp pour obtenir des conseil
 * Paquets recommandés : installez un serveur web pour faciliter l’accès.
 
 
-De plus, assurez-vous que la machine virtuelle peut se connecter au point de terminaison de télémétrie (https://support.netapp.com/[] et  https://api.activeiq.netapp.com[]) via HTTPS pour permettre à NetApp de recevoir des informations AutoSupport concernant vos plans de mise à niveau.
+De plus, assurez-vous que la machine virtuelle peut se connecter au point de terminaison de télémétrie (+https://support.netapp.com+/ et +https://api.activeiq.netapp.com+) via HTTPS pour permettre à NetApp de recevoir des informations AutoSupport sur vos plans de mise à niveau.
 
 .Étapes
 . Téléchargez le fichier binaire Upgrade Health Checker en link:https://console.netapp.com/automationHub["accéder au NetApp Console Automation Hub"] trouvant la tuile Upgrade Health Checker.

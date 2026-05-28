@@ -45,8 +45,8 @@ La vérification complète garantit que la machine virtuelle hébergeant Upgrade
 
 +
 ** Connectivité à l'adresse IP du cluster ONTAP via HTTPS
-** Connectivité au point de terminaison de télémétrie (https://support.netapp.com/[] et https://api.activeiq.netapp.com[]) via HTTPS
-** Connectivité aux points de terminaison de mise à jour automatique (https://api.uhc.netapp.com[], https://gql.aiq.netapp.com[], et https://api.activeiq.netapp.com[]) via HTTPS (443)
+** Connexion au point de terminaison de télémétrie (+https://support.netapp.com/+ et +https://api.activeiq.netapp.com+) via HTTPS
+** Connectivité aux points de terminaison de mise à jour automatique (+https://api.uhc.netapp.com+, +https://gql.aiq.netapp.com+, et +https://api.activeiq.netapp.com+) via HTTPS (443)
 ** Au moins 4 Go d `/tmp` espace disponible
 
 
