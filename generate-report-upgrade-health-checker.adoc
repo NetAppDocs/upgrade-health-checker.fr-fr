@@ -95,6 +95,10 @@ Le guide des paramètres d'entrée fournit également des informations sur la sp
 
 NOTE: Chaque exécution du programme constitue une « exécution unique » et comprendra toutes les données, les journaux et les résultats associés dans le dossier  `runs` correspondant.
 
+. Liste des fichiers de rapport générés :
++
+`ls -lrt`
+
 . Ouvrez le fichier de rapport (nommé  `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`) dans un navigateur web, Microsoft Excel ou un visualiseur JSON pour consulter le rapport. Si vous l'exécutez sur un hôte distant, téléchargez d'abord le fichier de rapport sur une machine où vous pourrez le consulter dans un navigateur web, dans Excel ou dans un visualiseur JSON.
 +
 Les chemins d'accès au journal et au rapport sont les suivants :
@@ -107,3 +111,6 @@ Les chemins d'accès au journal et au rapport sont les suivants :
 
 
 
+
+.Et ensuite
+Après avoir généré votre plan de mise à niveau et votre rapport de cluster, vous pouvez consulter le link:dashboard-upgrade-health-checker.html["Mise à niveau du tableau de bord Health Checker"] pour obtenir des détails sur l'état de santé des clusters évalués lors de l'exécution.

@@ -21,32 +21,49 @@ Upgrade Health Checker prend en charge les mises à niveau pour les versions ONT
 .Avant de commencer
 Configurez une machine virtuelle pour Upgrade Health Checker avec les spécifications suivantes :
 
-* Processeur et mémoire : VM m5.large ou équivalent avec 2 vCPUs et 8 GiB RAM.
-* Système d'exploitation recommandé : tout système d'exploitation Linux doté de la bibliothèque glibc version 2.28 ou supérieure pour une compatibilité optimale. Cela inclut :
-+
-** Ubuntu 22.04
-** RHEL8
-** RHEL9
+|===
+| Composant | Spécification 
 
 
-* Stockage : Prévoyez un volume racine d’au moins 100 GB et un volume NFS supplémentaire d’au moins 100 GB pour garantir la préservation des données en cas de compromission de la machine virtuelle.
-* Configuration requise pour l'hébergement : placez la machine virtuelle dans un emplacement disposant d'une connectivité au cluster et d'un accès Internet afin de permettre les mises à jour automatiques des outils. La machine doit pouvoir accéder aux points de terminaison suivants via HTTPS (443) pour effectuer ces mises à jour automatiques :
-+
-** +https://api.uhc.netapp.com+
-** +https://gql.aiq.netapp.com+
-** +https://api.activeiq.netapp.com+
-+
-En cas d'absence d'accès à Internet, consultez NetApp pour obtenir des conseils.
+ a| 
+*VM*
+| Machine virtuelle m5.large ou équivalent avec 2 vCPUs et 8 Gio de RAM 
 
 
+ a| 
+*Système d'exploitation*
+| Tout système d'exploitation Linux avec la bibliothèque glibc version 2.28 ou supérieure (Ubuntu 22.04, RHEL8 ou RHEL9) 
 
-* Paquets recommandés : installez un serveur web pour faciliter l’accès.
+
+ a| 
+*Espace disque*
+| Au moins 4 Go d'espace libre (8 Go recommandés) dans `/tmp`avec les droits d'exécution 
 
 
-De plus, assurez-vous que la machine virtuelle peut se connecter au point de terminaison de télémétrie (+https://support.netapp.com+/ et +https://api.activeiq.netapp.com+) via HTTPS pour permettre à NetApp de recevoir des informations AutoSupport sur vos plans de mise à niveau.
+ a| 
+*Réseau*
+| Connectivité HTTPS à l'interface logique de gestion (LIF) du ou des clusters ONTAP 
+
+
+ a| 
+*Version ONTAP*
+| Cluster exécutant ONTAP 9.11.1 ou version ultérieure 
+
+
+ a| 
+*Conditions d'hébergement*
+| Placez la machine virtuelle dans un emplacement disposant d'une connectivité au cluster et d'un accès Internet pour permettre les mises à jour automatiques des outils. La machine doit pouvoir accéder aux points de terminaison suivants via HTTPS (443) pour effectuer les mises à jour automatiques et permettre à NetApp de recevoir des informations AutoSupport sur vos plans de mise à niveau : https://support.netapp.com/[] https://api.uhc.netapp.com[] https://gql.aiq.netapp.com[] https://api.activeiq.netapp.com[] 
+
+
+ a| 
+*Packages recommandés*
+| Installez un serveur web pour faciliter l'accès 
+|===
+
+NOTE: Assurez-vous que la machine virtuelle puisse se connecter aux points de terminaison de mise à jour automatique et de télémétrie (https://support.netapp.com/[] et https://api.activeiq.netapp.com[] via HTTPS (443) afin de permettre à NetApp de recevoir des informations AutoSupport sur vos plans de mise à niveau. Si vous n'avez pas accès à Internet, vous devez télécharger manuellement la dernière version de Upgrade Health Checker.
 
 .Étapes
-. Téléchargez le fichier binaire Upgrade Health Checker en link:https://console.netapp.com/automationHub["accéder au NetApp Console Automation Hub"] trouvant la tuile Upgrade Health Checker.
+. Téléchargez le fichier binaire Upgrade Health Checker en naviguant jusqu'à link:https://console.netapp.com/automationHub["Hub d'automatisation NetApp Console"^] et en trouvant la vignette Upgrade Health Checker.
 . Configurez la machine virtuelle Upgrade Health Checker et utilisez SSH pour placer le binaire à l'emplacement de votre choix.
 . Vérifiez la signature numérique d'Upgrade Health Checker.
 +
@@ -85,7 +102,7 @@ Un résultat de `Verified OK` confirme que la signature est valide.
 NOTE: Vous pouvez créer un playbook Ansible pour automatiser le déploiement du rôle et de l'utilisateur sur tous les clusters ONTAP.
 
 +
-Vous devez créer le compte de service pour l'application http. Utilisez les commandes CLI suivantes pour configurer les autorisations nécessaires :
+Vous devez créer le compte de service pour l'application HTTP. Utilisez les commandes CLI suivantes pour configurer les autorisations nécessaires :
 
 +
 [source, cli]
@@ -156,6 +173,10 @@ conjur_password: "{{ lookup('cyberark.conjur.conjur_variable', 'prodvault/devops
 ----
 
 
+
+
+.Informations connexes
+* link:upgrade-health-checker-input-parameters.html["Découvrez les paramètres d'entrée pour Upgrade Health Checker"]
 
 
 .Et ensuite ?

@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: setup-email-upgrade-health-checker.html 
+keywords: upgrade, health, checker 
+summary: 'Vous pouvez configurer des e-mails pour recevoir les rapports de vérification de l"état de la mise à niveau.' 
+---
+= Recevez les rapports de vérification de l'état de la mise à niveau par e-mail
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez intégrer les e-mails à Upgrade Health Checker pour recevoir des rapports dans votre boîte de réception. Vous activez cette fonctionnalité via le fichier config.yaml ou un argument de ligne de commandes. Une fois activée, Upgrade Health Checker envoie les rapports générés (HTML, Excel ou JSON) à un ou plusieurs destinataires configurés à l'aide d'un serveur SMTP. Lorsque la fonctionnalité est désactivée, aucun rapport n'est envoyé. Si la génération du rapport échoue et que l'e-mail est activé, les fichiers journaux sont envoyés aux destinataires configurés.
+
+
+
+== Configurez à l'aide du fichier config.yaml
+
+. Activez l'envoi de rapports par e-mail dans le fichier config.yaml.
++
+[listing]
+----
+# Email Report Configuration
+EMAIL:
+  ENABLED: true
+----
+. Veuillez fournir les paramètres de configuration SMTP ainsi que les informations relatives à l'expéditeur et à l'objet :
++
+[listing]
+----
+# SMTP Server Configuration
+EMAIL:
+  ENABLED: true
+  FROM: "uhc-notify@example.com"
+  SUBJECT: "UHC Upgrade Health Report"
+  REPLY_TO: <email>
+  SMTP:
+    HOST: "smtp.example.com"
+    PORT: [<port-number>]
+----
+. Indiquez les adresses électroniques des destinataires et configurez les formats de rapport envoyés par e-mail, par exemple : HTML, EXCEL, JSON, ALL :
++
+[listing]
+----
+# Recipient Email Addresses, report formats
+EMAIL:
+  ENABLED: true
+  TO: <recipient>
+  FROM: "uhc-notify@example.com"
+  SUBJECT: "UHC Upgrade Health Report"
+  REPLY_TO: <email>
+  RECIPIENTS: "user1@example.com, user2@example.com"
+  REPORT_FORMATS: "HTML,EXCEL,JSON"   # valid values: HTML, EXCEL, JSON or ALL
+  SMTP:
+    HOST: "smtp.example.com"
+    PORT: [PORT]
+----
+
+
+
+
+== Configurer à l'aide d'arguments de ligne de commandes
+
+. Activez les rapports par e-mail à l'aide des arguments de ligne de commandes :
++
+[listing]
+----
+./uhc --email-enabled=true
+----
+. Veuillez fournir les adresses électroniques des destinataires :
++
+[listing]
+----
+./uhc --email-recipients="user1@example.com, user2@example.com"
+----
+. Configurez les formats de rapport envoyés par e-mail, par exemple HTML, EXCEL, JSON :
++
+[listing]
+----
+./uhc --email-report-formats=HTML,EXCEL,JSON
+----
+
+
+[NOTE]
+====
+Les trois attributs suivants peuvent être configurés à la fois à l'aide des arguments de ligne de commandes et du fichier config.yaml ; les autres attributs ne sont configurables que dans le fichier config.yaml :
+
+* Courriel activé
+* Destinataires des courriels
+* Formats de rapports par courriel
+
+
+Notez que lorsque des arguments de ligne de commandes sont fournis, ils remplacent les valeurs du fichier config.yaml.
+
+Par exemple :
+
+[listing]
+----
+./uhc \
+  --email-enabled=true
+  --email-recipients="user1@example.com, user2@example.com" \
+  --email-report-formats=HTML,EXCEL,JSON \
+----
+[listing]
+----
+EMAIL:
+  FROM: "uhc-notify@example.com"
+  SUBJECT: "UHC Upgrade Health Report"
+  REPLY_TO: <email>
+  SMTP:
+    HOST: "smtp.example.com"
+    PORT: [PORT]
+----
+====

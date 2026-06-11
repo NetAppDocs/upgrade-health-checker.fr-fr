@@ -21,15 +21,25 @@ sidebar:
       url: "/learn-about-upgrade-health-checker.html"
     - title: Configurer Upgrade Health Checker
       url: "/set-up-upgrade-health-checker.html"
+    - title: Paramètres d'entrée pour Upgrade Health Checker
+      url: "/upgrade-health-checker-input-parameters.html"
   - title: Utilisez Upgrade Health Checker
     entries:
     - title: Générer un rapport de mise à niveau ONTAP
       url: "/generate-report-upgrade-health-checker.html"
+    - title: Mise à niveau du tableau de bord Health Checker
+      url: "/dashboard-upgrade-health-checker.html"
     - title: Automatisez la génération de rapports
       url: "/automate-report-upgrade-health-checker.html"
-  - title: Paramètres d'entrée pour Upgrade Health Checker
-    url: "/upgrade-health-checker-input-parameters.html"
-  - title: FAQ
-    url: "/faq-upgrade-health-checker.html"
+    - title: Configuration pour recevoir les rapports par courriel
+      url: "/setup-email-upgrade-health-checker.html"
+  - title: Maintenance, dépannage, FAQ
+    entries:
+    - title: Maintenir
+      url: "/maintain-upgrade-health-checker.html"
+    - title: Dépannage
+      url: "/troubleshoot-upgrade-health-checker.html"
+    - title: FAQ
+      url: "/faq-upgrade-health-checker.html"
   - title: Mentions légales
     url: "/legal-notices.html"

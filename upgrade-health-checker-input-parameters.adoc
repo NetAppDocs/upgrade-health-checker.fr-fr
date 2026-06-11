@@ -300,6 +300,29 @@ CLUSTER:
 ====
 
 
+=== Tableau de bord
+
+Le  `--dashboard`paramètre régénère le tableau de bord à partir des exécutions existantes  `<runs>/dashboard/index.html`sans contacter un cluster. Vous l'utilisez pour actualiser la vue d'ensemble du parc en dehors d'une exécution normale. Le tableau de bord fournit une vue d'ensemble du statut de santé de tous les clusters qui ont été évalués récemment, vous permettant de surveiller et de comparer facilement la préparation à la mise à niveau de plusieurs clusters en un seul endroit. Vous pouvez ouvrir le tableau de bord dans un navigateur web pour consulter l'état de santé, les éventuels blocages et les risques de chaque cluster en un coup d'œil.
+
+* Argument CLI: `--dashboard`
+
+
+.Exemples
+[%collapsible]
+====
+* Argument CLI :
++
+[listing]
+----
+./uhc --dashboard
+./uhc --dashboard --runs-path /custom/output
+./uhc --dashboard --config-path /path/to/custom_config.yaml
+----
+
+
+====
+
+
 === Désactiver la télémétrie
 
 Pour désactiver la télémétrie, ajoutez ce qui suit à votre  `config.yaml` fichier :

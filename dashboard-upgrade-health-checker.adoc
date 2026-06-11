@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: dashboard-upgrade-health-checker.html 
+keywords: upgrade, health, checker, dashboard, for upgrade health checker 
+summary: 'Tableau de bord pour le vérificateur d"état de la mise à niveau.' 
+---
+= Mise à niveau du tableau de bord Health Checker
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Un tableau de bord HTML statique est généré à  `runs/dashboard/index.html` la fin de chaque exécution de l'outil de vérification de l'état des mises à niveau. Le tableau de bord fournit une vue d'ensemble du statut de santé des clusters récemment évalués, vous permettant de surveiller et de comparer la préparation à la mise à niveau entre les clusters.
+
+Pour régénérer le tableau de bord ultérieurement (sans contacter un cluster), exécutez :
+
+[listing]
+----
+./uhc --dashboard
+./uhc --dashboard --runs-path /custom/output
+./uhc --dashboard --config-path /path/to/custom_config.yaml
+----
+Voici une vue d'un tableau de bord Upgrade Health Checker généré récemment. image:../media/dashboard3.gif[""]
+
+En haut de la page se trouvent cinq fiches récapitulatives de couleurs différentes (chacune étant également un filtre sélectionnable) affichant :
+
+* *Prêt pour la mise à niveau :* Nombre de clusters dont la dernière vérification de l'état n’a détecté aucun obstacle, c’est-à-dire prêts à être mis à niveau.
+* *Bloqué :* Nombre de clusters bloqués et ne pouvant être mis à niveau tant que les blockers ne sont pas résolus.
+* *Erreurs :* Nombre de clusters dont la dernière exécution UHC n’a pas pu se terminer (par exemple, échec de connexion, d’authentification ou de collecte de données).
+* *Obsolète (>7) :* Nombre de clusters dont la dernière exécution UHC remonte à plus de 7 jours (les données de vérification de l'état sont obsolètes).
+* *Total de la flotte :* Nombre total de clusters dans la flotte, (ceux qui ont une exécution dans la fenêtre du tableau de bord, par défaut les 30 derniers jours).
+
+
+La section « Aperçu de la flotte » détaille l’état actuel de la flotte. Pour chaque cluster, les informations suivantes sont fournies (le tableau présente la dernière exécution par cluster) :
+
+* *Nom du cluster :* Nom du cluster (avec son adresse IP de gestion indiquée sous le nom).
+* *État :* État actuel du cluster : Prêt, Bloqué, Erreur ou Obsolète.
+* *Problèmes bloquants :* Nombre de problèmes bloquants sur le cluster. Il s’agit de problèmes critiques qui doivent être résolus avant la mise à niveau.
+* *À risque* : Nombre d’éléments à risque identifiés sur le cluster. Il s’agit des risques identifiés lors de la vérification préalable à la mise à jour.
+* *Avertissements :* Nombre d’avertissements sur le cluster. La vérification préalable à la mise à jour s’est terminée avec quelques avertissements ; vous pouvez choisir de corriger ces avertissements ou de poursuivre la mise à jour.
+* *Ignoré :* Nombre de contrôles ignorés sur le cluster.
+* *Version cible :* La version d'ONTAP vers laquelle l’utilisateur souhaite effectuer la mise à niveau. (Il peut s’agir de la même version que la version actuelle si vous souhaitez uniquement effectuer une vérification de l'état sur la version en cours d’exécution.)
+* *Nœuds :* Les nœuds du cluster, chacun étant indiqué par son nom et son modèle matériel (par exemple eurbkpcla (FAS8200)).
+* *Rapports :* Formats de rapports disponibles pour l’exécution : HTML, JSON, Excel, Log.
+* *Dernière exécution :* Date et heure de la dernière exécution de Upgrade Health Checker (avec une indication relative « il y a X jours »).
+
+
+Vous pouvez sélectionner *Recharger* pour actualiser la page. Utilisez la barre *Search* pour rechercher des détails sur un cluster spécifique.

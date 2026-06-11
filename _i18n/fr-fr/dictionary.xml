@@ -5,9 +5,6 @@
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Étapes</block>
   <block id="bb4632cd1e5a77d2d2a6ad9870b1edf3" category="inline-link-macro">Générer un rapport de mise à niveau ONTAP</block>
   <block id="7c3f7cf7c460927ff3a0856e45060529" category="list-text">Créez un script pour exécuter Upgrade Health Checker avec les paramètres appropriés pour votre environnement.</block>
-  <block id="4a2fc7904851b98a582cefc5576f3c0b" category="paragraph">Voici un exemple de tâche cron qui exécute l'outil du lundi au vendredi à 4 h du matin. Les fichiers binaire et config.yaml ont été installés dans /opt/uhc/tool/.</block>
-  <block id="af6a390b44e1466e540d2c134316ae89" category="paragraph">Script Bash :</block>
-  <block id="a16591c11e618548314d95d8cb9f466c" category="paragraph">Tâche Cron :</block>
   <block id="4a419eed497d5a9cc6325bd677912447" category="list-text">Une fois que Upgrade Health Checker a terminé ses vérifications, accédez au dossier <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> pour consulter le plan de mise à niveau et le rapport du cluster.</block>
   <block id="e634565f95b1012e8b64a5e25f71b4d2" category="admonition">Chaque exécution du programme constitue une exécution unique et contiendra toutes les données, les journaux et les résultats associés dans le dossier <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> associé.</block>
   <block id="4e37054133b8a9e3c2adbe0fdc102c34" category="paragraph">Les chemins d'accès au journal et au rapport sont les suivants :</block>
@@ -72,12 +69,6 @@
   <block id="b9497e3cda04aa10a25628bf0b021f6a" category="summary">Vous pouvez télécharger Upgrade Health Checker pour générer des rapports complets sur site avant de passer à une version plus récente d'ONTAP.</block>
   <block id="ce2d4be7e0d93c8b156f834ce3704614" category="doc">Téléchargez et configurez Upgrade Health Checker</block>
   <block id="55dcd8cbc9d164986479594db66fd89e" category="paragraph">Configurez une machine virtuelle pour Upgrade Health Checker avec les spécifications suivantes :</block>
-  <block id="cf0860ffd4dc1929d768f74d92735b75" category="list-text">Processeur et mémoire : VM m5.large ou équivalent avec 2 vCPUs et 8 GiB RAM.</block>
-  <block id="28a03eb4af7c5f6abf99620ada6c6cfb" category="list-text">Stockage : Prévoyez un volume racine d’au moins 100 GB et un volume NFS supplémentaire d’au moins 100 GB pour garantir la préservation des données en cas de compromission de la machine virtuelle.</block>
-  <block id="907609b93268ffb2d43f03dae5c950a3" category="paragraph">En cas d'absence d'accès à Internet, consultez NetApp pour obtenir des conseils.</block>
-  <block id="ad9d14ce6f324c6a7d87f50e2b156ad7" category="list-text">Paquets recommandés : installez un serveur web pour faciliter l’accès.</block>
-  <block id="513157ecd257a5ac15a2bf664400f97e" category="inline-link-macro">accéder au NetApp Console Automation Hub</block>
-  <block id="f7516c48eeea343f7fff7d7edbe475e0" category="list-text">Téléchargez le fichier binaire Upgrade Health Checker en <block ref="d29e77f401a63487e90236d789082319" category="inline-link-macro-rx"></block> trouvant la tuile Upgrade Health Checker.</block>
   <block id="516fc188e817bb3cd710620ace1129a5" category="list-text">Configurez la machine virtuelle Upgrade Health Checker et utilisez SSH pour placer le binaire à l'emplacement de votre choix.</block>
   <block id="0243c7349a37a636f0d08348fc2b1ba7" category="list-text">Vérifiez la signature numérique d'Upgrade Health Checker.</block>
   <block id="2093f13abbe3f1a90a7519a3aba24859" category="paragraph">Upgrade Health Checker possède un certificat de signature de code public <block ref="a1b0111e4810b200f4d7ad5020792ba6" prefix="(" category="inline-code"></block>) et une chaîne de certificats intermédiaires et racine <block ref="2cad9a6c3ca1368f7d8a3bdcbf540946" prefix="(" category="inline-code"></block>).</block>
@@ -88,7 +79,6 @@
   <block id="94a2cf0aa74e751f770d9240dcbcb074" category="paragraph">Un résultat de<block ref="33a9cc0739a5a17f65e28cf0b260007f" prefix=" " category="inline-code"></block> confirme que la signature est valide.</block>
   <block id="9f58de4245b2fb930c02c3766a7ff23f" category="list-text">Configurez un compte de service et un rôle pour l'accès au cluster ONTAP. Pour l'accès au cluster via Upgrade Health Checker, créez le rôle de service en tant que rôle REST.</block>
   <block id="15ec8997d97cf2ca0a22a65e524b2811" category="admonition">Vous pouvez créer un playbook Ansible pour automatiser le déploiement du rôle et de l'utilisateur sur tous les clusters ONTAP.</block>
-  <block id="d9e228dba301308afb2b46a1a951b363" category="paragraph">Vous devez créer le compte de service pour l'application http. Utilisez les commandes CLI suivantes pour configurer les autorisations nécessaires :</block>
   <block id="034a1ea726a7fbf3e2fc72fde8ed680d" category="paragraph">Par exemple, si vous avez CyberArk et Conjur, vous pouvez configurer votre environnement pour éviter de transmettre les identifiants via un fichier yaml ou une ligne de commandes.</block>
   <block id="f2f2f12c645a941c4c701a0ad14f78da" category="list-text">Créer les coffres-forts CyberArk requis :</block>
   <block id="6fecc57bc25e97c77bad1c6d06e7153d" category="list-text">Créez un Safe (Main-Conjur-Safe) qui contient les identifiants et les secrets de l'application</block>
@@ -201,7 +191,6 @@
   <block id="daad4dadeda8cd86f01c8ad7f2a30465" category="summary">Découvrez les nouveautés de ce site de documentation.</block>
   <block id="a8324b80938b67ec782deb0221494038" category="doc">Quoi de neuf dans Upgrade Health Checker</block>
   <block id="984ed907e956f5ada3f813bd4a802fd2" category="inline-link-macro">Hub d'automatisation NetApp Console</block>
-  <block id="28418efc88b69f5e65f0a85f816e9eea" category="paragraph">Découvrez les nouveautés de Upgrade Health Checker. Vous pouvez trouver des informations supplémentaires sur les améliorations en accédant à la vignette Upgrade Health Checker dans le <block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block> et en consultant les derniers fichiers de téléchargement Upgrade Health Checker.</block>
   <block id="ae47874d4e80f14ff840114a5af1558e" category="paragraph">Upgrade Health Checker offre une nouvelle solution pour générer des rapports complets sur site afin de vous permettre de mener à bien une mise à niveau ONTAP. Il peut être utilisé avec les frameworks d'automatisation et d'orchestration existants pour améliorer l'efficacité lors de la mise à niveau d'un ou de plusieurs clusters. Upgrade Health Checker prend en charge les mises à niveau vers ONTAP 9.11.1 et versions ultérieures.</block>
   <block id="ba6d627457ce6f12fac3776c3f84b9f5" category="inline-link-macro">En savoir plus sur Upgrade Health Checker</block>
   <block id="c2da3472d13132f746797e82ab607214" category="paragraph"><block ref="311172ef496e6974c00a808505e30585" category="inline-link-macro-rx"></block>.</block>
@@ -224,17 +213,12 @@
   <block id="fbea9b709f9869db351058e2990a8978" category="paragraph">Upgrade Health Checker prend en charge les mises à niveau pour les versions ONTAP sur site 9.11.1 et ultérieures. Si vous utilisez Cloud Volumes ONTAP, consultez <block ref="28b2d523b3cffe11b9614de34794e1ab" category="inline-link-macro-rx"></block> pour obtenir des informations sur la mise à niveau de votre système.</block>
   <block id="d2c961c08b2b0c36adb33c10963a0eb6" category="paragraph">Upgrade Health Checker prend en charge les mises à niveau pour les environnements ONTAP 9.11.1 sur site et versions ultérieures.</block>
   <block id="bef81ef7170eb4c509a54d4673a85016" category="paragraph">Pour en savoir plus sur Upgrade Health Checker, vous pouvez consulter la <block ref="6a92c3eccbf08c1bc6caa0a6e92c02bb" category="inline-link-macro-rx"></block> ou visionner la vidéo d'introduction suivante.</block>
-  <block id="c2aacd91b1737e52a658e8a6f26cab08" category="list-text">Système d'exploitation recommandé : tout système d'exploitation Linux doté de la bibliothèque glibc version 2.28 ou supérieure pour une compatibilité optimale. Cela inclut :</block>
-  <block id="e5051949dc3a37f9077e85df0f1c8a21" category="list-text">Ubuntu 22.04</block>
-  <block id="131e01e2ecbd7de2f9b3f16afa129bcd" category="list-text">RHEL8</block>
-  <block id="100147deec73dd6ee82e8d75ab8b4981" category="list-text">RHEL9</block>
   <block id="3d814f055016b0a5f8d3fd580ea0225d" category="list-text">(Facultatif) Configurez la gestion des identifiants pour sécuriser l'accès à l'application.</block>
   <block id="bd4dd8e5ccbd7fbe54cf123a8e868745" category="list-text">Ouvrez le fichier de rapport (nommé <block ref="781e82a34e84af3b11fccec6b813c654" prefix=" " category="inline-code"></block>) dans un navigateur web, Microsoft Excel ou un visualiseur JSON pour consulter le rapport. Si vous exécutez Upgrade Health Checker sur un hôte distant, téléchargez d'abord le fichier de rapport sur un ordinateur où vous pourrez le consulter dans un navigateur web, dans Excel ou dans un visualiseur JSON.</block>
   <block id="e1b8614301d7bec3825b94f88f799128" category="list-text">Chemin d'accès au rapport HTML :<block ref="42dfa52dc698f1548746e65dadae2dba" prefix=" " category="inline-code"></block></block>
   <block id="38fda984a0c5a847814d8f79ebf27b47" category="list-text">Chemin d'accès au rapport Excel :<block ref="b579a006aab9674bb4b5ee8bdc1dc5a8" prefix=" " category="inline-code"></block></block>
   <block id="82e19305023b5eb3613e715db77f833c" category="list-text">Chemin du rapport JSON :<block ref="fa32c5a3f7d651976fb4d5ab4d04b0b0" prefix=" " category="inline-code"></block></block>
   <block id="c9222608750e8dc2e14567da95cc5574" category="list-text">Ouvrez le fichier de rapport (nommé <block ref="781e82a34e84af3b11fccec6b813c654" prefix=" " category="inline-code"></block>) dans un navigateur web, Microsoft Excel ou un visualiseur JSON pour consulter le rapport. Si vous l'exécutez sur un hôte distant, téléchargez d'abord le fichier de rapport sur une machine où vous pourrez le consulter dans un navigateur web, dans Excel ou dans un visualiseur JSON.</block>
-  <block id="23f77c02d4b9cce31928ac38c3a2b6f9" category="list-text">Configuration requise pour l'hébergement : placez la machine virtuelle dans un emplacement disposant d'une connectivité au cluster et d'un accès Internet afin de permettre les mises à jour automatiques des outils. La machine doit pouvoir accéder aux points de terminaison suivants via HTTPS (443) pour effectuer ces mises à jour automatiques :</block>
   <block id="ef442759af12bb34136648bc4519a80c" category="section-title">15 avril 2026</block>
   <block id="46f2cb9a84a7af28bc6cd48700cc9900" category="paragraph">Cette mise à jour de la documentation Upgrade Health Checker inclut les fonctionnalités suivantes.</block>
   <block id="e1a2132b8b37788de7f02a2417b9fb84" category="paragraph"><block ref="818545cfdb8752d4fd7459b5cbb30ef7" category="inline-link-macro-rx"></block>.</block>
@@ -244,9 +228,164 @@
   <block id="14bcc4201c40840cb4def541b49a3f32" category="sidebar">Premiers pas avec Upgrade Health Checker à l'aide de NetApp Lab on Demand</block>
   <block id="9878135fc061d82ca23d024a73b70f17" category="list-text">Connexion au point de terminaison de télémétrie (+https://support.netapp.com/+ et +https://api.activeiq.netapp.com+) via HTTPS</block>
   <block id="8e902ec9dc6816d99e16bdee4a2eed46" category="list-text">Connectivité aux points de terminaison de mise à jour automatique (+https://api.uhc.netapp.com+, +https://gql.aiq.netapp.com+, et +https://api.activeiq.netapp.com+) via HTTPS (443)</block>
-  <block id="6004dfc86627bd24fdacdda35ddd16c3" category="list-text">+https://api.uhc.netapp.com+</block>
-  <block id="375ac624794a2a89bd6c16e9b07a6656" category="list-text">+https://gql.aiq.netapp.com+</block>
-  <block id="0cf9833b48d6a8ca87c343c5a45e4e84" category="list-text">+https://api.activeiq.netapp.com+</block>
-  <block id="527e62c9953c2bebba6b642861ac2fd8" category="paragraph">De plus, assurez-vous que la machine virtuelle peut se connecter au point de terminaison de télémétrie (+https://support.netapp.com+/ et +https://api.activeiq.netapp.com+) via HTTPS pour permettre à NetApp de recevoir des informations AutoSupport sur vos plans de mise à niveau.</block>
   <block id="7da7d55bf35c61004edeb6d3b68a9970" category="list-text">UHC a besoin d'accéder à un nouveau point de terminaison (+https://api.activeiq.netapp.com+) pour que les fonctionnalités de mise à jour automatique fonctionnent.</block>
+  <block id="fb87b83f5a1f10d68c8aae574e593e92" category="list-text">Créez un script d'automatisation pour les tâches planifiées cron afin d'exécuter Upgrade Health Checker. L'exemple de script suivant exécute Upgrade Health Checker pour plusieurs clusters. Les fichiers binaires et config.yaml ont été installés dans /opt/uhc/tool/.</block>
+  <block id="896d9c07e1c3a1231ece824cc9567062" category="list-text">Configurez la tâche cron pour exécuter le script du lundi au vendredi à 4h00 du matin :</block>
+  <block id="ace9e20908f5ac61a1cd07a6d3d60c0f" category="admonition">Pour une surveillance continue de l'état de santé, utilisez <block ref="bfb43d575663966ac38a26eb4b47410c" prefix=" " category="inline-code"></block> sans objectif de mise à niveau spécifique.</block>
+  <block id="2e9f002d0057390dc4b674ce8a3d800e" category="list-text">[[étape 5]] Une fois que Upgrade Health Checker a terminé ses vérifications, accédez au dossier <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> pour afficher le plan de mise à niveau et le rapport du cluster.</block>
+  <block id="551f07047fdf0d517a22dcfe3312964b" category="summary">Tableau de bord pour le vérificateur d'état de la mise à niveau.</block>
+  <block id="3e8ecbbf11e529936f5698c3a5fd6a06" category="doc">Mise à niveau du tableau de bord Health Checker</block>
+  <block id="9b465946a9dc97d12d820bd8415f008d" category="paragraph">Un tableau de bord HTML statique est généré à <block ref="eb97244a50f154dcafcd27d6257f80cf" prefix=" " category="inline-code"></block> la fin de chaque exécution de l'outil de vérification de l'état des mises à niveau. Le tableau de bord fournit une vue d'ensemble du statut de santé des clusters récemment évalués, vous permettant de surveiller et de comparer la préparation à la mise à niveau entre les clusters.</block>
+  <block id="bafc7ab120beca2fc58036fe47bfc092" category="paragraph">Pour régénérer le tableau de bord ultérieurement (sans contacter un cluster), exécutez :</block>
+  <block id="7215ee9c7d9dc229d2921a40e899ec5f" category="inline-image-macro"></block>
+  <block id="edff9c28ee07f5cc07a47836188c2686" category="paragraph">Voici une vue d'un tableau de bord Upgrade Health Checker généré récemment. <block ref="a123d0eb24a591f100df7a50344ada33" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="630394c315fe49ad9045e4158725c3fe" category="paragraph">En haut de la page se trouvent cinq fiches récapitulatives de couleurs différentes (chacune étant également un filtre sélectionnable) affichant :</block>
+  <block id="a075fa4490303d9c1443c75b2736e30d" category="list-text">*Prêt pour la mise à niveau :* Nombre de clusters dont la dernière vérification de l'état n’a détecté aucun obstacle, c’est-à-dire prêts à être mis à niveau.</block>
+  <block id="3f1f632cd20c57889809ec5bf6ab7bbb" category="list-text">*Bloqué :* Nombre de clusters bloqués et ne pouvant être mis à niveau tant que les blockers ne sont pas résolus.</block>
+  <block id="3a6e25b520b3f5881d96f081ff198a81" category="list-text">*Erreurs :* Nombre de clusters dont la dernière exécution UHC n’a pas pu se terminer (par exemple, échec de connexion, d’authentification ou de collecte de données).</block>
+  <block id="e54508d96af4ea3751d27501025a3451" category="list-text">*Obsolète (&gt;7) :* Nombre de clusters dont la dernière exécution UHC remonte à plus de 7 jours (les données de vérification de l'état sont obsolètes).</block>
+  <block id="24f22c56e97444ad026c4cfac69a442c" category="list-text">*Total de la flotte :* Nombre total de clusters dans la flotte, (ceux qui ont une exécution dans la fenêtre du tableau de bord, par défaut les 30 derniers jours).</block>
+  <block id="0c65a78b237129936578fe5da1dfe40a" category="paragraph">La section « Aperçu de la flotte » détaille l’état actuel de la flotte. Pour chaque cluster, les informations suivantes sont fournies (le tableau présente la dernière exécution par cluster) :</block>
+  <block id="f5d710cbf53ca529c4a7d62a7de34951" category="list-text">*Nom du cluster :* Nom du cluster (avec son adresse IP de gestion indiquée sous le nom).</block>
+  <block id="cb32135fa3dab6723b15b6df0c91f5db" category="list-text">*État :* État actuel du cluster : Prêt, Bloqué, Erreur ou Obsolète.</block>
+  <block id="028ea4296bad1dbdc86179219fecf652" category="list-text">*Problèmes bloquants :* Nombre de problèmes bloquants sur le cluster. Il s’agit de problèmes critiques qui doivent être résolus avant la mise à niveau.</block>
+  <block id="01b1c997fbe376bbd6d7a2968b6ac6d7" category="list-text">*À risque* : Nombre d’éléments à risque identifiés sur le cluster. Il s’agit des risques identifiés lors de la vérification préalable à la mise à jour.</block>
+  <block id="35f0e468ccf12525527d16a473d74d80" category="list-text">*Avertissements :* Nombre d’avertissements sur le cluster. La vérification préalable à la mise à jour s’est terminée avec quelques avertissements ; vous pouvez choisir de corriger ces avertissements ou de poursuivre la mise à jour.</block>
+  <block id="7b75e7fa2e407d7fef084f1fe6283795" category="list-text">*Ignoré :* Nombre de contrôles ignorés sur le cluster.</block>
+  <block id="7f4617478438df00d0d45aa69514596a" category="list-text">*Version cible :* La version d'ONTAP vers laquelle l’utilisateur souhaite effectuer la mise à niveau. (Il peut s’agir de la même version que la version actuelle si vous souhaitez uniquement effectuer une vérification de l'état sur la version en cours d’exécution.)</block>
+  <block id="0fcf67e865e3049ade1666cadb12abbc" category="list-text">*Nœuds :* Les nœuds du cluster, chacun étant indiqué par son nom et son modèle matériel (par exemple eurbkpcla (FAS8200)).</block>
+  <block id="a319f39dbc6923a205daf0321183a106" category="list-text">*Rapports :* Formats de rapports disponibles pour l’exécution : HTML, JSON, Excel, Log.</block>
+  <block id="9ef3ab67f95cc83071b8f0d04aa74267" category="list-text">*Dernière exécution :* Date et heure de la dernière exécution de Upgrade Health Checker (avec une indication relative « il y a X jours »).</block>
+  <block id="2ff94ba52e8ff2610f4d806fd7e21e3f" category="paragraph">Vous pouvez sélectionner *Recharger* pour actualiser la page. Utilisez la barre *Search* pour rechercher des détails sur un cluster spécifique.</block>
+  <block id="426256c0b300d1b909c9960a8b4f4502" category="list-text">Liste des fichiers de rapport générés :</block>
+  <block id="d4e68006aa10a272ac99f5258e04bce0" category="paragraph"><block ref="337ca2600c5aac5c10555f8d39e9a1d6" prefix="" category="inline-code"></block></block>
+  <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">Et ensuite</block>
+  <block id="d21267b32d0903f82a079081555c0ff2" category="paragraph">Après avoir généré votre plan de mise à niveau et votre rapport de cluster, vous pouvez consulter le <block ref="cb5987a19cc29bdff093adf9e3c49ecc" category="inline-link-macro-rx"></block> pour obtenir des détails sur l'état de santé des clusters évalués lors de l'exécution.</block>
+  <block id="ded140dc9fd3fca8297ae91b7e9d1724" category="summary">Tâches de maintenance pour Upgrade Health Checker.</block>
+  <block id="ecbaa4ec2fe853662f425db1a8a36e9c" category="doc">Maintenir le vérificateur de l'état de la mise à niveau</block>
+  <block id="cf59700fb6f14790204513a841b1810e" category="paragraph">Assurez le bon fonctionnement de Upgrade Health Checker en vérifiant régulièrement les mises à jour, en consultant les journaux pour détecter tout problème récurrent et en veillant à ce que l'outil soit correctement configuré pour votre environnement. Cela garantit que l'outil fonctionne de manière fiable et efficace. Si vous rencontrez de nouveaux problèmes ou avez besoin d'aide supplémentaire, consultez les ressources d'assistance NetApp ou contactez le support NetApp.</block>
+  <block id="dcb646493350ef44bd676f1fd9e10df9" category="section-title">Gestion de l'espace /tmp</block>
+  <block id="cefcb82b87001c9160e27c413751194f" category="paragraph">Upgrade Health Checker extrait ses composants dans le répertoire <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> lors de son exécution. Si vous rencontrez des problèmes liés à un espace insuffisant dans <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block>, considérez les éléments suivants :</block>
+  <block id="6bfccd562c4557fb4f938fee42c0f5a5" category="list-text">Vérifiez l'espace disponible dans<block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block>, en vous assurant qu'il y a au minimum 4 Go d'espace libre pour que l'outil fonctionne efficacement.</block>
+  <block id="d85f324a8e882b998ede63ba68005eb6" category="list-text">Supprimez les fichiers inutiles de<block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> pour libérer de l'espace.</block>
+  <block id="47673696ae151be397814ee68344241c" category="section-title">Exécuter le nettoyage du répertoire</block>
+  <block id="cd260971d4895e521192f2714cc37c63" category="paragraph">Upgrade Health Checker crée un répertoire d'exécution unique pour chaque exécution, qui contient les journaux et les résultats. Pour gérer l'espace disque, configurez un processus de nettoyage automatique afin de supprimer les anciens répertoires d'exécution après une certaine période, par exemple 30 jours.</block>
+  <block id="919c77fac60e97628bf166a4aa7c1a72" category="section-title">Mises à jour automatiques</block>
+  <block id="29d681abeb8160231b2f25e3892eb831" category="paragraph">Upgrade Health Checker vérifie automatiquement les mises à jour après chaque exécution lorsque la connexion Internet est disponible. Cela vous garantit de bénéficier des dernières fonctionnalités, améliorations et corrections de bogues. En l'absence d'accès à Internet, vous pouvez télécharger manuellement la dernière version depuis le <block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block>.</block>
+  <block id="f1c254c35bb2f7f754353006dc018672" category="paragraph">Pour désactiver les mises à jour automatiques, ajoutez ce qui suit au <block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block> fichier :</block>
+  <block id="2cb05e4bb7830be982f0922fed86b4cd" category="cell">Composant</block>
+  <block id="875b0e30e76428bc0706b781b36b31aa" category="cell">Spécification</block>
+  <block id="aa6ad543d0b70e402b03f35585f4d9b4" category="paragraph">*VM*</block>
+  <block id="48fd9f67eafde4d21e1c831496b5bc31" category="cell">Machine virtuelle m5.large ou équivalent avec 2 vCPUs et 8 Gio de RAM</block>
+  <block id="03c63c1d02a71129f7d335a163ab8ba3" category="paragraph">*Système d'exploitation*</block>
+  <block id="99ec8dcb0ed1c88eb9753d983a56b169" category="cell">Tout système d'exploitation Linux avec la bibliothèque glibc version 2.28 ou supérieure (Ubuntu 22.04, RHEL8 ou RHEL9)</block>
+  <block id="10f7d0fe3ffe2ba74337cff47755ff6a" category="paragraph">*Espace disque*</block>
+  <block id="6e608f5579351cbba52e3d90b1722cdb" category="cell">Au moins 4 Go d'espace libre (8 Go recommandés) dans<block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block>avec les droits d'exécution</block>
+  <block id="28d088a01674ea58931c1dffe64fd8b0" category="paragraph">*Réseau*</block>
+  <block id="74faaa8963c90dee70382e7ae7b6debe" category="cell">Connectivité HTTPS à l'interface logique de gestion (LIF) du ou des clusters ONTAP</block>
+  <block id="176c0fe1d322d9a51e31204aad32eae6" category="paragraph">*Version ONTAP*</block>
+  <block id="92545160fc537c4d5544686c4bcdf2e5" category="cell">Cluster exécutant ONTAP 9.11.1 ou version ultérieure</block>
+  <block id="71158affd0036fb2466b1fb9e9ae37b4" category="paragraph">*Conditions d'hébergement*</block>
+  <block id="fffb00fef85cf67efb62289a6532ecf2" category="cell">Placez la machine virtuelle dans un emplacement disposant d'une connectivité au cluster et d'un accès Internet pour permettre les mises à jour automatiques des outils. La machine doit pouvoir accéder aux points de terminaison suivants via HTTPS (443) pour effectuer les mises à jour automatiques et permettre à NetApp de recevoir des informations AutoSupport sur vos plans de mise à niveau : <block ref="b6fcb4b13f321b8cb388d57eb2e860ab" category="inline-link-rx"></block> <block ref="072b499eacb5befcbdab2d6cc0fe02a0" category="inline-link-rx"></block> <block ref="53fb0fc7c544c164b74ed43fbccd4384" category="inline-link-rx"></block> <block ref="1e149c7d9ce6dc9e42acefe98045ece8" category="inline-link-rx"></block></block>
+  <block id="6416dbbf5267211166cfea2ed336e59e" category="paragraph">*Packages recommandés*</block>
+  <block id="38f5250c3529fb3f11c0374bdaf9aeaa" category="cell">Installez un serveur web pour faciliter l'accès</block>
+  <block id="6063847442b88d203c59c2c6de6f2e53" category="admonition">Assurez-vous que la machine virtuelle puisse se connecter aux points de terminaison de mise à jour automatique et de télémétrie <block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block> et<block ref="b6e65db6bdd125b2fca849ddf715a294" category="inline-link-rx"></block> via HTTPS (443) afin de permettre à NetApp de recevoir des informations AutoSupport sur vos plans de mise à niveau. Si vous n'avez pas accès à Internet, vous devez télécharger manuellement la dernière version de Upgrade Health Checker.</block>
+  <block id="fd2112d1826143e744670603b8189778" category="list-text">Téléchargez le fichier binaire Upgrade Health Checker en naviguant jusqu'à <block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block> et en trouvant la vignette Upgrade Health Checker.</block>
+  <block id="0028a1b2c66adc5ceda52b78a1cdb74d" category="paragraph">Vous devez créer le compte de service pour l'application HTTP. Utilisez les commandes CLI suivantes pour configurer les autorisations nécessaires :</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="list-title">Informations connexes</block>
+  <block id="075d48f32d1c61c7bc401a6884f7cf92" category="list-text"><block ref="075d48f32d1c61c7bc401a6884f7cf92" category="inline-link-macro-rx"></block></block>
+  <block id="2bc7aac0df718ec4b8d51eacce3de379" category="summary">Vous pouvez configurer des e-mails pour recevoir les rapports de vérification de l'état de la mise à niveau.</block>
+  <block id="403a25a6039c0e1bf716eb5582433b74" category="doc">Recevez les rapports de vérification de l'état de la mise à niveau par e-mail</block>
+  <block id="860efc9b661f4d41df0b3275d4a01f9e" category="paragraph">Vous pouvez intégrer les e-mails à Upgrade Health Checker pour recevoir des rapports dans votre boîte de réception. Vous activez cette fonctionnalité via le fichier config.yaml ou un argument de ligne de commandes. Une fois activée, Upgrade Health Checker envoie les rapports générés (HTML, Excel ou JSON) à un ou plusieurs destinataires configurés à l'aide d'un serveur SMTP. Lorsque la fonctionnalité est désactivée, aucun rapport n'est envoyé. Si la génération du rapport échoue et que l'e-mail est activé, les fichiers journaux sont envoyés aux destinataires configurés.</block>
+  <block id="e152f7a0987cd387b3f0af29e5da3550" category="section-title">Configurez à l'aide du fichier config.yaml</block>
+  <block id="7b717dfd9ad1ff92fe9062d96808c202" category="list-text">Activez l'envoi de rapports par e-mail dans le fichier config.yaml.</block>
+  <block id="a5506b391e227dfd4ee5fcf46a44f411" category="list-text">Veuillez fournir les paramètres de configuration SMTP ainsi que les informations relatives à l'expéditeur et à l'objet :</block>
+  <block id="dc0335c87191d92d81fca87bdb3e9a6d" category="list-text">Indiquez les adresses électroniques des destinataires et configurez les formats de rapport envoyés par e-mail, par exemple : HTML, EXCEL, JSON, ALL :</block>
+  <block id="becf91e5465bdb37d46d763d4aab426c" category="section-title">Configurer à l'aide d'arguments de ligne de commandes</block>
+  <block id="479f67ea57ff0730833a90e8cb344675" category="list-text">Activez les rapports par e-mail à l'aide des arguments de ligne de commandes :</block>
+  <block id="86687a26ed58885822822c492bb525c6" category="list-text">Veuillez fournir les adresses électroniques des destinataires :</block>
+  <block id="50473cade6ce5b072ef594d97e30f293" category="list-text">Configurez les formats de rapport envoyés par e-mail, par exemple HTML, EXCEL, JSON :</block>
+  <block id="6cde847387b92f199ce8915b3692ac37" category="paragraph">Les trois attributs suivants peuvent être configurés à la fois à l'aide des arguments de ligne de commandes et du fichier config.yaml ; les autres attributs ne sont configurables que dans le fichier config.yaml :</block>
+  <block id="02d162bc011d2df35f8cd6f906d7d60a" category="list-text">Courriel activé</block>
+  <block id="f46e85a0de52240f550f9daab9d6086c" category="list-text">Destinataires des courriels</block>
+  <block id="ea263adf46b6d5e874d790afd83f0987" category="list-text">Formats de rapports par courriel</block>
+  <block id="2b6bf35359882281e9a439e9cfcdfd7a" category="paragraph">Notez que lorsque des arguments de ligne de commandes sont fournis, ils remplacent les valeurs du fichier config.yaml.</block>
+  <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">Par exemple :</block>
+  <block id="1cc4274eac4a90919037379ad302ee24" category="summary">Dépannage de l'outil de vérification de l'état de la mise à niveau : problèmes courants, erreurs et solutions pour les mises à niveau ONTAP.</block>
+  <block id="33fc1d20f1d2e7e8d9ea39cc1c1e260b" category="doc">Dépannage de la mise à niveau du vérificateur d'état</block>
+  <block id="8bbf781921fc79273f7113760a28cdce" category="paragraph">Apprenez à dépanner les problèmes courants de l'outil de vérification de l'état de la mise à niveau et à résoudre les erreurs pouvant bloquer la planification de la mise à niveau d'ONTAP.</block>
+  <block id="7a4e5e5bc542eae2d10e3506f839f2ae" category="section-title">Résoudre les problèmes</block>
+  <block id="d2131ff4bb2c3380d5fb369390728b83" category="paragraph">{empty} + {empty}</block>
+  <block id="ea4508c977fcb9a0e48f3ded870a27a8" category="section-title">Problème : erreurs d'authentification ou d'identifiant</block>
+  <block id="ad4a1b332ef02eba5753f8bbcb6925cb" category="paragraph">*Symptômes:*</block>
+  <block id="8a15bd0e2ae7adaa325b7140fd8918ef" category="paragraph">Ces erreurs indiquent que Upgrade Health Checker ne parvient pas à s'authentifier auprès du cluster ONTAP en utilisant les identifiants fournis. Cela peut être dû à un nom d'utilisateur ou un mot de passe incorrect, à des autorisations insuffisantes pour le compte utilisateur, ou à un compte verrouillé ou désactivé.</block>
+  <block id="dee8d5233a1bf8bca6b506b1fada7ce9" category="paragraph">*Solutions :*</block>
+  <block id="00d459b7c0c08efe897940253729fe39" category="list-text">Vérifiez que le nom d'utilisateur et le mot de passe sont corrects</block>
+  <block id="d52be7383d150e0b81d21613dc8c06c0" category="list-text">Vérifiez que l'utilisateur dispose des autorisations suffisantes pour l'API REST ONTAP</block>
+  <block id="9f566b2667cc3d86cf38f0b870985d7f" category="list-text">Vérifiez si le compte est verrouillé ou désactivé</block>
+  <block id="cfd63c7012a6be1846cea9a45dc483c9" category="section-title">Problème : La mise à jour automatique échoue</block>
+  <block id="8c81589f2957e3aa70aecb06fd217ca8" category="paragraph">Ces erreurs indiquent que Upgrade Health Checker ne parvient pas à se connecter à Internet pour rechercher ou télécharger les mises à jour. Cela peut être dû à des problèmes de connectivité réseau, à des règles de pare-feu bloquant l'accès ou à des paramètres de proxy qui ne sont pas configurés correctement.</block>
+  <block id="ae20b15476604fe269fbce10de03e6a4" category="list-text">Vérifiez la connectivité internet :</block>
+  <block id="d046b10a2f8c751c23b7f911ea3773c6" category="list-text">Vérifier l'espace disque (1 Go requis) :</block>
+  <block id="ad898993f940021bd3ad23b42accb44e" category="paragraph">{empty} {empty}</block>
+  <block id="431c6a71d852d1ddd6e36d0967692092" category="section-title">Problème : Le démarrage du binaire est long</block>
+  <block id="802c6872b04f64b431e11ebba074b480" category="paragraph">*Cause :* Le fichier binaire est autonome et doit se décompresser avant son exécution.</block>
+  <block id="864ce8d1a7259f74a8beb5d3625bec3a" category="paragraph">*Comportement attendu :* La première exécution peut prendre quelques secondes à se charger. Ceci est normal. {empty} + {empty} + {empty}</block>
+  <block id="fec89051f62c7e3434e266910c40b963" category="section-title">Problème : « Permission refusée » ou « Impossible d’exécuter le binaire » sur /tmp</block>
+  <block id="e3df8e48656415667871afc1aa46fcc7" category="paragraph">Cette erreur peut se produire lorsque l'outil ne parvient pas à exécuter les fichiers dans le <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> répertoire, qui est utilisé pour extraire et exécuter les composants de l'outil. Cela peut être causé par des permissions restrictives sur le <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> répertoire ou par des politiques de sécurité empêchant l'exécution à partir de cet emplacement.</block>
+  <block id="be2f1b00715f445e5a837d81e93d62aa" category="list-text">Vérifiez si <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> a <block ref="5dff25754d04a3c3149f3e6f121b26d9" prefix=" " category="inline-code"></block> été activé :</block>
+  <block id="fd4811e1fd80f374db9d4833e17a8070" category="list-text">[[étape 2]] Remonter<block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> avec<block ref="52fb3679b07eb74d90784e612ca5cb30" prefix=" " category="inline-code"></block> (nécessite les droits d'administrateur système root) :</block>
+  <block id="f1e0220096b641cba448abe4b801e9c3" category="list-text">[[step3]] Si l'étape précédente ne peut être effectuée en raison de contraintes, vous pouvez configurer l'outil pour utiliser un autre répertoire temporaire disposant des autorisations appropriées :</block>
+  <block id="6aebcbbedc2f36d843680b1961802fd7" category="admonition">Le chemin personnalisé doit d'abord exister pour que cette solution de contournement fonctionne. S'il n'existe pas déjà, il n'est pas créé et le système revient à l'utilisation de <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block>.</block>
+  <block id="73b2df10f7b67ded6ab6cf1b86991dbf" category="list-text">[[step4]] Après avoir ajusté les autorisations ou modifié le répertoire temporaire, essayez d'exécuter à nouveau l'outil pour voir si le problème est résolu. +</block>
+  <block id="1e884a4c2675ebfd0594c1b730de2f64" category="section-title">Problème : Délai de connexion dépassé</block>
+  <block id="9c9127499d341b7b251a98a8ef0a92e6" category="list-text">Vérifiez la connectivité réseau au cluster</block>
+  <block id="496ee7b530c0419300f81733e67066fa" category="list-text">Vérifiez qu'aucun pare-feu ne bloque le trafic HTTPS (443)</block>
+  <block id="b8027da214d9dd9b9cb38a2128abbb32" category="list-text">Vérifiez que le cluster répond correctement et n'est pas soumis à une charge importante +</block>
+  <block id="48e556675d42e854384e37e27ae1bd53" category="section-title">Problème : espace disque insuffisant</block>
+  <block id="df7a028433a6352a0525ed8745c71f02" category="list-text">Vérifier l'espace disque :</block>
+  <block id="f38feba100e94a26947698ffb65787d0" category="list-text">Nettoyer les anciens runs :</block>
+  <block id="66b125a667f8595b760441dcffc2f2a6" category="list-text">Nettoyer les fichiers temporaires :</block>
+  <block id="dd06ae0a4def45ac4ec706a7653b0974" category="section-title">Problème : Chemin d'exécution invalide</block>
+  <block id="7bfb219958b40ed65b0f654874dbf0f7" category="list-text">Vérifiez que le répertoire de sortie des exécutions existe et est accessible en écriture</block>
+  <block id="d98b3f0d77b985709129b1f1e16a37c9" category="list-text">Spécifiez un chemin valide via l'interface de ligne de commande :<block ref="fed3f55a42a2951d8cc17fe74f2c5c7c" prefix=" " category="inline-code"></block></block>
+  <block id="99f74f7362afe78c4b1c1bfb8fce3c78" category="list-text">Configurer dans config.yaml :<block ref="90e52bc4c2ec4e18601e845838c2d206" prefix=" " category="inline-code"></block> +</block>
+  <block id="eb29348b6dd8a887a4e448bd076a0d68" category="section-title">Problème : version ONTAP cible non valide</block>
+  <block id="a55a0697bcad08d11e1db77706944702" category="list-text">Vérifiez le format de la chaîne de version cible (par exemple "9.16.1")</block>
+  <block id="5e3b1ad08f40862590377b4dc658847f" category="list-text">Assurez-vous que la version cible est plus récente ou égale à la version actuelle du cluster</block>
+  <block id="eac4bea114f45fbcde72bffa9676859b" category="list-text">Utilisez « current » pour conserver la version ONTAP existante :<block ref="38907dfdc2d957c2999f04423c2c8ce8" prefix=" " category="inline-code"></block> +</block>
+  <block id="5b584e89824b05e3b4d6dd81e09be721" category="section-title">Problème : Échec de la vérification de la signature</block>
+  <block id="dd578bb71be5a3c860dfc426be450035" category="paragraph">*Cause :* Le fichier de mise à jour téléchargé est peut-être corrompu ou a été altéré.</block>
+  <block id="465c2635767beccedfa5e57f64aefbc4" category="paragraph">*Solution :*</block>
+  <block id="c258ae31abc09d68b232660cf7929016" category="list-text">Mise à jour manuelle - à télécharger depuis le site d'assistance NetApp</block>
+  <block id="9240376b345d1a483c6221db6257c009" category="list-text">Vérifier la signature manuellement :</block>
+  <block id="e1b2ac6754c6304f9652925768ee6151" category="section-title">Problème : Échec du téléchargement des données de télémétrie</block>
+  <block id="f7a8cf20633c17be3d8f1175fa56f991" category="list-text">Vérifiez la connectivité au point de terminaison de télémétrie :</block>
+  <block id="0ff7ece9cab0856a25fdf06f1d8c6fd5" category="section-title">Problème : fichier de verrouillage « MISE À JOUR EN COURS »</block>
+  <block id="8c9b7d617b8e2601babcd67f5004fd9e" category="paragraph">MISE À JOUR EN COURS</block>
+  <block id="6f111ca5b9888aeee3176fa324d766ab" category="paragraph">Une autre instance de mise à jour automatique UHC est en cours. Veuillez patienter jusqu'à la fin de la mise à jour avant de relancer.</block>
+  <block id="7b2030c6d7f35bf705b3fef2fd25f4df" category="paragraph">*Cause :* Un fichier de verrouillage existe suite à une précédente mise à jour.</block>
+  <block id="a1a9bf05bd0200049b8b2ed1d648f98d" category="list-text">*Veuillez patienter :* La mise à jour se termine généralement en 1 à 2 minutes.</block>
+  <block id="2458156c4470b544d2fbae9246d52eb6" category="list-text">*Vérifier si les données sont obsolètes :* (nettoyage automatique après 1 heure):</block>
+  <block id="a52b439279a01b88be6bc7a65776dd5e" category="list-text">[[étape 3]] *Nettoyage manuel, si nécessaire :*</block>
+  <block id="2938c7f7e560ed972f8a4f68e80ff834" category="section-title">Tableau de bord</block>
+  <block id="7576434732b4f07a539d094d4942f9aa" category="paragraph">Le <block ref="c6ea40941291b612a71c04fdbc6d130c" prefix=" " category="inline-code"></block>paramètre régénère le tableau de bord à partir des exécutions existantes <block ref="7056e6d35ec8691b2eb0b8b0db5a7ba0" prefix=" " category="inline-code"></block>sans contacter un cluster. Vous l'utilisez pour actualiser la vue d'ensemble du parc en dehors d'une exécution normale. Le tableau de bord fournit une vue d'ensemble du statut de santé de tous les clusters qui ont été évalués récemment, vous permettant de surveiller et de comparer facilement la préparation à la mise à niveau de plusieurs clusters en un seul endroit. Vous pouvez ouvrir le tableau de bord dans un navigateur web pour consulter l'état de santé, les éventuels blocages et les risques de chaque cluster en un coup d'œil.</block>
+  <block id="28849b8ddf75d322380a176b61c9b16f" category="list-text">Argument CLI:<block ref="c6ea40941291b612a71c04fdbc6d130c" prefix=" " category="inline-code"></block></block>
+  <block id="7d9f16c834f0164eb43b6f75f5a9e7ae" category="paragraph">Découvrez les nouveautés de l'outil de vérification de l'état des mises à jour (UHC). Vous pouvez trouver des informations supplémentaires sur les améliorations en accédant à la vignette Upgrade Health Checker dans le <block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block> et en consultant les derniers fichiers de téléchargement Upgrade Health Checker.</block>
+  <block id="13a1b8a317b4b6dbe05a3757a911ea12" category="section-title">11 juin 2026</block>
+  <block id="e6eed926cf73beb76f76f27b527327f4" category="list-text">UHC prend en charge la livraison directe des rapports dans votre boîte de réception.</block>
+  <block id="3a506ebe2da361710132cacb844329a5" category="paragraph"><block ref="10a34a9ef91da7f8d2b68c9cc9a95cd4" category="inline-link-macro-rx"></block>.</block>
+  <block id="dd968dcb3c3b548604c091104c8e83cf" category="list-text">Introduit le <block ref="c6ea40941291b612a71c04fdbc6d130c" prefix=" " category="inline-code"></block>paramètre qui régénère le tableau de bord à partir des exécutions existantes à<block ref="7056e6d35ec8691b2eb0b8b0db5a7ba0" prefix=" " category="inline-code"></block>sans contacter un cluster. Il fournit une vue d'ensemble du statut de santé de tous les clusters récemment consultés.</block>
+  <block id="e06741797ed1dc0a966f53071a491401" category="inline-link-macro">Paramètre du tableau de bord</block>
+  <block id="2db3ba2e9c7b7806153c255359ca61d2" category="paragraph"><block ref="cb5987a19cc29bdff093adf9e3c49ecc" category="inline-link-macro-rx"></block>, <block ref="742c6b812eaf7871aa5cdafc51efea43" category="inline-link-macro-rx"></block>.</block>
+  <block id="b8625ecfb276c9ebf1ede5fca0088ca8" category="list-text">Ajout d'une nouvelle section Maintenance, Dépannage et FAQ.</block>
+  <block id="1ab8a927937778a6689a579c30b0ccaa" category="list-text">Maintenez Upgrade Health Checker en vérifiant régulièrement les mises à jour, en surveillant les journaux pour détecter tout problème récurrent et en vous assurant que l'outil est correctement configuré pour votre environnement.</block>
+  <block id="dee801512c32b9a598a47b86ba488f76" category="paragraph"><block ref="4e186b263c1e6fa5ae08ef69bdaf2995" category="inline-link-macro-rx"></block>.</block>
+  <block id="f12f1c86955a028fd35ab9eaff2150a3" category="list-text">Dépannez les problèmes courants de l'outil de vérification de l'état de la mise à niveau et résolvez les erreurs pouvant bloquer la planification de la mise à niveau ONTAP.</block>
+  <block id="baa81debda1c4b19727722cd64a108d4" category="paragraph"><block ref="3597fe8c8063c1708eb12f618dae69b7" category="inline-link-macro-rx"></block>.</block>
+  <block id="dedb0a1692447383a23033fe650d7fb3" category="paragraph"><block ref="6a92c3eccbf08c1bc6caa0a6e92c02bb" category="inline-link-macro-rx"></block>.</block>
+  <block id="467d7cccaec467a4d67d9bfedb9bccbf" category="sidebar">Configuration pour recevoir les rapports par courriel</block>
+  <block id="0ff45cc75d0cd4d181c04f8f358944c3" category="sidebar">Maintenance, dépannage, FAQ</block>
+  <block id="ade01a5a398372194a42c36e9f5279ac" category="sidebar">Maintenir</block>
+  <block id="d60c463bb4096f3ed4bd1618626dfe10" category="sidebar">Dépannage</block>
 </blocks>
