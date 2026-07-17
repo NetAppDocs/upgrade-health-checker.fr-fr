@@ -17,6 +17,7 @@ Foire aux questions (FAQ) pour Upgrade Health Checker.
 
 
 
+[[how-does-upgrade-health-checker-differ-from-upgrade-advisor]]
 == En quoi Upgrade Health Checker diffère-t-il d'Upgrade Advisor ?
 
 Upgrade Health Checker est un outil installé sur site, adapté aux utilisateurs disposant d'environnements vastes ou complexes, d'un accès limité à Internet ou de frameworks d'automatisation et d'orchestration existants. Upgrade Advisor convient aux utilisateurs avec un environnement plus restreint qui préfèrent une expérience basée sur le cloud et centrée sur l'interface utilisateur.
@@ -25,12 +26,14 @@ Vous pouvez en apprendre davantage sur link:learn-about-upgrade-health-checker.h
 
 
 
+[[what-information-does-an-upgrade-health-checker-report-include]]
 == Quelles informations un rapport Upgrade Health Checker inclut-il ?
 
 Les rapports Upgrade Health Checker fournissent des informations détaillées sur les blocages potentiels et les avertissements qui doivent être pris en compte avant la mise à niveau de vos clusters ONTAP, les risques associés à vos clusters, ainsi que des informations sur les nouvelles fonctionnalités et améliorations de la version ONTAP vers laquelle vous effectuez la mise à niveau.
 
 
 
+[[can-upgrade-health-checker-be-used-without-an-internet-connection]]
 == L'outil Upgrade Health Checker peut-il être utilisé sans connexion Internet ?
 
 Vous n'avez pas besoin d'une connexion Internet pour exécuter Upgrade Health Checker. Il génère des plans de mise à niveau et des rapports sur site en utilisant les données de configuration actuelles de votre cluster ONTAP.
@@ -39,6 +42,7 @@ Toutefois, un accès Internet est requis pour les mises à jour automatiques de 
 
 
 
+[[what-versions-of-ontap-does-upgrade-health-checker-support]]
 == Quelles versions d'ONTAP sont prises en charge par Upgrade Health Checker ?
 
 Upgrade Health Checker prend en charge les mises à niveau pour les environnements ONTAP 9.11.1 sur site et versions ultérieures.

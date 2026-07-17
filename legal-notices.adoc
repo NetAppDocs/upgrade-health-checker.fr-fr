@@ -15,12 +15,14 @@ Les mentions légales donnent accès aux déclarations de droits d'auteur, aux m
 
 
 
+[[copyright]]
 == Copyright
 
 link:https://www.netapp.com/company/legal/copyright/["https://www.netapp.com/company/legal/copyright/"^]
 
 
 
+[[trademarks]]
 == Marques déposées
 
 NETAPP, le logo NETAPP et les marques figurant sur la page NetApp Trademarks sont des marques de NetApp, Inc. Les autres noms de sociétés et de produits peuvent être des marques de leurs propriétaires respectifs.
@@ -29,6 +31,7 @@ link:https://www.netapp.com/company/legal/trademarks/["https://www.netapp.com/co
 
 
 
+[[patents]]
 == Brevets
 
 Une liste actuelle des brevets détenus par NetApp peut être trouvée à :
@@ -37,12 +40,14 @@ link:https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf["https://
 
 
 
+[[privacy-policy]]
 == Politique de confidentialité
 
 link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.com/company/legal/privacy-policy/"^]
 
 
 
+[[open-source]]
 == Open source
 
 Les fichiers de notification fournissent des informations sur les droits d'auteur et les licences de tiers utilisés dans les logiciels NetApp.

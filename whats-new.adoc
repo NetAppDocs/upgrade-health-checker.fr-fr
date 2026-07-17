@@ -1,5 +1,5 @@
 ---
-sidebar: sidebarU 
+sidebar: sidebar 
 permalink: whats-new.html 
 keywords: upgrade, health, checker, whats new, release, notes 
 summary: Découvrez les nouveautés de ce site de documentation. 
@@ -17,9 +17,24 @@ Découvrez les nouveautés de l'outil de vérification de l'état des mises à j
 
 
 
+[[17-july-2026]]
+== 17 juillet 2026
+
+Cette mise à jour ajoute plusieurs améliorations, notamment un tableau de bord de visualisation des risques liés à la flotte, la prise en charge de l'authentification et du chiffrement des e-mails, le rapport du nombre de disques, la prise en charge de la version ONTAP recommandée, ainsi que les vérifications IMT NAS et SAN.
+
+* Tableau de bord UHC : vue *Risque de flotte* maintenant disponible
+* Intégration de la messagerie : prise en charge d’un serveur de messagerie avec authentification et chiffrement
+* Ajout de *Drive Count* dans le résumé du cluster dans le rapport
+* La version ONTAP recommandée est désormais prise en charge
+* Ajout de la prise en charge des vérifications IMT pour les NAS et les SAN
+
+
+
+
+[[11-june-2026]]
 == 11 juin 2026
 
-Cette mise à jour de la documentation Upgrade Health Checker inclut les fonctionnalités suivantes.
+Cette mise à jour ajoute la livraison par e-mail des rapports, un paramètre de tableau de bord pour des aperçus rapides de l'état de santé et de nouvelles sections de documentation pour vous aider à maintenir et à dépanner Upgrade Health Checker.
 
 * UHC prend en charge la livraison directe des rapports dans votre boîte de réception.
 +
@@ -31,7 +46,7 @@ link:dashboard-upgrade-health-checker.html["Mise à niveau du tableau de bord He
 
 * Ajout d'une nouvelle section Maintenance, Dépannage et FAQ.
 +
-** Maintenez Upgrade Health Checker en vérifiant régulièrement les mises à jour, en surveillant les journaux pour détecter tout problème récurrent et en vous assurant que l'outil est correctement configuré pour votre environnement.
+** Maintenez Upgrade Health Checker en état de fonctionnement en vérifiant les mises à jour, en surveillant les journaux pour détecter les problèmes récurrents et en vérifiant que vous configurez correctement l'outil.
 +
 link:maintain-upgrade-health-checker.html["Maintenir le vérificateur de l'état de la mise à niveau"].
 
@@ -49,11 +64,12 @@ link:faq-upgrade-health-checker.html["FAQ pour le vérificateur d'état de la mi
 
 
 
+[[15-april-2026]]
 == 15 avril 2026
 
-Cette mise à jour de la documentation Upgrade Health Checker inclut les fonctionnalités suivantes.
+Cette mise à jour ajoute un nouveau format de rapport XLSX et nécessite l'accès à un nouveau point de terminaison pour que les mises à jour automatiques fonctionnent.
 
-* UHC a besoin d'accéder à un nouveau point de terminaison (+https://api.activeiq.netapp.com+) pour que les fonctionnalités de mise à jour automatique fonctionnent.
+* Vous devez accorder à UHC l'accès à un nouveau point de terminaison (+https://api.activeiq.netapp.com+) pour que les fonctionnalités de mise à jour automatique fonctionnent.
 +
 link:set-up-upgrade-health-checker.html["Téléchargez et configurez Upgrade Health Checker"].
 
@@ -68,8 +84,9 @@ link:automate-report-upgrade-health-checker.html["Automatisez la génération de
 
 
 
+[[13-february-2026]]
 == 13 février 2026
 
-Upgrade Health Checker offre une nouvelle solution pour générer des rapports complets sur site afin de vous permettre de mener à bien une mise à niveau ONTAP. Il peut être utilisé avec les frameworks d'automatisation et d'orchestration existants pour améliorer l'efficacité lors de la mise à niveau d'un ou de plusieurs clusters. Upgrade Health Checker prend en charge les mises à niveau vers ONTAP 9.11.1 et versions ultérieures.
+Upgrade Health Checker est désormais disponible. Cet outil génère des rapports détaillés, sur site, pour vous aider à mener à bien une mise à niveau d'ONTAP. Vous pouvez utiliser Upgrade Health Checker avec vos frameworks d'automatisation et d'orchestration existants pour gagner du temps lors de la mise à niveau d'un ou de plusieurs clusters. Upgrade Health Checker prend en charge les mises à niveau vers ONTAP 9.11.1 et versions ultérieures.
 
 link:learn-about-upgrade-health-checker.html["En savoir plus sur Upgrade Health Checker"].

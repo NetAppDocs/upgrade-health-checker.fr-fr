@@ -17,12 +17,14 @@ Apprenez à dépanner les problèmes courants de l'outil de vérification de l'�
 
 
 
+[[troubleshoot-issues]]
 == Résoudre les problèmes
 
 {empty} + {empty}
 
 
 
+[[issue-authentication-or-credential-errors]]
 === Problème : erreurs d'authentification ou d'identifiant
 
 *Symptômes:*
@@ -50,6 +52,7 @@ Ces erreurs indiquent que Upgrade Health Checker ne parvient pas à s'authentifi
 
 
 
+[[issue-auto-update-fails]]
 === Problème : La mise à jour automatique échoue
 
 *Symptômes:*
@@ -81,6 +84,7 @@ df -h <location of uhc>
 
 
 
+[[issue-binary-takes-a-long-time-to-start]]
 === Problème : Le démarrage du binaire est long
 
 *Cause :* Le fichier binaire est autonome et doit se décompresser avant son exécution.
@@ -89,6 +93,7 @@ df -h <location of uhc>
 
 
 
+[[issue-permission-denied-or-cannot-execute-binary-on-tmp]]
 === Problème : « Permission refusée » ou « Impossible d’exécuter le binaire » sur /tmp
 
 *Symptômes:*
@@ -139,6 +144,7 @@ NOTE: Le chemin personnalisé doit d'abord exister pour que cette solution de co
 
 
 
+[[issue-connection-timeout]]
 === Problème : Délai de connexion dépassé
 
 *Symptômes:*
@@ -157,6 +163,7 @@ Request timeout
 
 
 
+[[issue-insufficient-disk-space]]
 === Problème : espace disque insuffisant
 
 *Symptômes:*
@@ -196,6 +203,7 @@ rm -rf /tmp/_MEI*
 
 
 
+[[issue-invalid-runs-path]]
 === Problème : Chemin d'exécution invalide
 
 *Symptômes:*
@@ -215,6 +223,7 @@ Cannot create tarball: basepath_runs '<path>' does not exist
 
 
 
+[[issue-invalid-target-ontap-version]]
 === Problème : version ONTAP cible non valide
 
 *Symptômes:*
@@ -234,6 +243,7 @@ Downgrade is not supported. Target version must be greater than or equal to the 
 
 
 
+[[issue-signature-verification-fails]]
 === Problème : Échec de la vérification de la signature
 
 *Symptômes:*
@@ -261,6 +271,7 @@ openssl dgst -sha256 -verify UHC-Linux-public.pub -signature uhc.sig uhc
 
 
 
+[[issue-telemetry-upload-failure]]
 === Problème : Échec du téléchargement des données de télémétrie
 
 *Symptômes:*
@@ -283,6 +294,7 @@ Telemetry endpoint is not reachable
 
 
 
+[[issue-update-in-progress-lock-file]]
 === Problème : fichier de verrouillage « MISE À JOUR EN COURS »
 
 *Symptômes:*

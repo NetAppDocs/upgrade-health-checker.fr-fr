@@ -13,11 +13,14 @@ summary: 'Vous pouvez configurer des e-mails pour recevoir les rapports de véri
 
 
 [role="lead"]
-Vous pouvez intégrer les e-mails à Upgrade Health Checker pour recevoir des rapports dans votre boîte de réception. Vous activez cette fonctionnalité via le fichier config.yaml ou un argument de ligne de commandes. Une fois activée, Upgrade Health Checker envoie les rapports générés (HTML, Excel ou JSON) à un ou plusieurs destinataires configurés à l'aide d'un serveur SMTP. Lorsque la fonctionnalité est désactivée, aucun rapport n'est envoyé. Si la génération du rapport échoue et que l'e-mail est activé, les fichiers journaux sont envoyés aux destinataires configurés.
+Upgrade Health Checker peut envoyer des rapports directement dans votre boîte de réception par e-mail. Activez cette fonctionnalité via le fichier config.yaml ou un argument de ligne de commandes. Une fois activée, Upgrade Health Checker envoie les rapports générés (HTML, Excel ou JSON) à un ou plusieurs destinataires via un serveur SMTP. Lorsqu'elle est désactivée, aucun rapport n'est envoyé. Si la génération du rapport échoue et que l'envoi par e-mail est activé, Upgrade Health Checker envoie les fichiers journaux aux destinataires configurés.
 
 
 
+[[configure-using-the-config-yaml-file]]
 == Configurez à l'aide du fichier config.yaml
+
+Vous pouvez configurer les paramètres de messagerie dans le fichier config.yaml en activant les rapports par e-mail, en ajoutant les détails du serveur SMTP et en spécifiant les adresses des destinataires et les formats de rapport.
 
 . Activez l'envoi de rapports par e-mail dans le fichier config.yaml.
 +
@@ -27,7 +30,7 @@ Vous pouvez intégrer les e-mails à Upgrade Health Checker pour recevoir des ra
 EMAIL:
   ENABLED: true
 ----
-. Veuillez fournir les paramètres de configuration SMTP ainsi que les informations relatives à l'expéditeur et à l'objet :
+. Ajoutez les paramètres de configuration SMTP, les informations de l'expéditeur et l'objet :
 +
 [listing]
 ----
@@ -41,7 +44,7 @@ EMAIL:
     HOST: "smtp.example.com"
     PORT: [<port-number>]
 ----
-. Indiquez les adresses électroniques des destinataires et configurez les formats de rapport envoyés par e-mail, par exemple : HTML, EXCEL, JSON, ALL :
+. Ajoutez les adresses électroniques des destinataires et définissez les formats de rapports que le système envoie par courriel, par exemple, HTML, EXCEL, JSON ou ALL. Vous pouvez également utiliser l'authentification et le chiffrement :
 +
 [listing]
 ----
@@ -57,12 +60,20 @@ EMAIL:
   SMTP:
     HOST: "smtp.example.com"
     PORT: [PORT]
+    USE_SMTP_AUTH: true
+    USE_TLS: true
+    USE_SSL: true
+    USERNAME: "user@example.com"
+    PASSWORD: "********"
 ----
 
 
 
 
+[[configure-using-command-line-arguments]]
 == Configurer à l'aide d'arguments de ligne de commandes
+
+Vous pouvez configurer les paramètres de messagerie de base à l'aide d'arguments de ligne de commandes pour activer les rapports, spécifier les destinataires et sélectionner les formats de rapport.
 
 . Activez les rapports par e-mail à l'aide des arguments de ligne de commandes :
 +
@@ -86,14 +97,14 @@ EMAIL:
 
 [NOTE]
 ====
-Les trois attributs suivants peuvent être configurés à la fois à l'aide des arguments de ligne de commandes et du fichier config.yaml ; les autres attributs ne sont configurables que dans le fichier config.yaml :
+Vous pouvez configurer les trois attributs suivants à l'aide d'arguments de ligne de commandes ou du fichier config.yaml. Vous pouvez configurer tous les autres attributs uniquement dans le fichier config.yaml :
 
 * Courriel activé
 * Destinataires des courriels
 * Formats de rapports par courriel
 
 
-Notez que lorsque des arguments de ligne de commandes sont fournis, ils remplacent les valeurs du fichier config.yaml.
+Notez que les arguments de la ligne de commandes remplacent les valeurs du fichier config.yaml.
 
 Par exemple :
 
