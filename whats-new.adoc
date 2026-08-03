@@ -22,11 +22,14 @@ Découvrez les nouveautés de l'outil de vérification de l'état des mises à j
 
 Cette mise à jour ajoute plusieurs améliorations, notamment un tableau de bord de visualisation des risques liés à la flotte, la prise en charge de l'authentification et du chiffrement des e-mails, le rapport du nombre de disques, la prise en charge de la version ONTAP recommandée, ainsi que les vérifications IMT NAS et SAN.
 
-* Tableau de bord UHC : vue *Risque de flotte* maintenant disponible
-* Intégration de la messagerie : prise en charge d’un serveur de messagerie avec authentification et chiffrement
-* Ajout de *Drive Count* dans le résumé du cluster dans le rapport
-* La version ONTAP recommandée est désormais prise en charge
-* Ajout de la prise en charge des vérifications IMT pour les NAS et les SAN
+* Fournit une prise en charge d'un serveur de messagerie avec authentification et chiffrement.
++
+link:setup-email-upgrade-health-checker.html["Recevez les rapports de vérification de l'état de la mise à niveau par e-mail"].
+
+* Inclut un tableau de bord de visualisation des risques liés à la flotte qui classe l'ensemble de votre parc informatique selon les risques. Vous pouvez désormais voir quels clusters bloqués présentent le plus de risques. Cela vous permet de prioriser la remédiation.
+* Le rapport de cluster inclut désormais le nombre de disques, ainsi que la version d'ONTAP, le nombre de nœuds et la capacité. Cela complète l’instantané matériel pour la mise à niveau et la planification de la capacité.
+* L'évaluation UHC inclut désormais la version ONTAP cible de mise à niveau recommandée.
+* Ajoute la prise en charge des vérifications IMT pour NAS et SAN.
 
 
 
