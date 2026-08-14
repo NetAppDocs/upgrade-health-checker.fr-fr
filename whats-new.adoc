@@ -17,6 +17,13 @@ Découvrez les nouveautés de l'outil de vérification de l'état des mises à j
 
 
 
+[[13-august-2026]]
+== 13 août 2026
+
+Cette mise à jour améliore les contrôles d'interopérabilité pour les clusters SAN et NAS ONTAP et corrige certains problèmes existants.
+
+
+
 [[17-july-2026]]
 == 17 juillet 2026
 
