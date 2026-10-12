@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: troubleshoot-upgrade-health-checker.html 
 keywords: upgrade, health, checker, troubleshoot, issues, errors, ontap 
-summary: 'Dépannage de l"outil de vérification de l"état de la mise à niveau : problèmes courants, erreurs et solutions pour les mises à niveau ONTAP.' 
+summary: 'Résolvez les problèmes de l"outil de vérification de l"état de la mise à niveau en consultant les problèmes, erreurs et solutions courants pour les mises à niveau ONTAP.' 
 ---
 = Dépannage de la mise à niveau du vérificateur d'état
 :hardbreaks:
