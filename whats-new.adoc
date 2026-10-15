@@ -17,6 +17,19 @@ Découvrez les nouveautés de l'outil de vérification de l'état des mises à j
 
 
 
+[[15-october-2026]]
+== 15 octobre 2026
+
+Cette mise à jour apporte plusieurs améliorations à l’évaluation des risques liés à la version cible, aux détails du rapport, à la sélection de la version ONTAP recommandée et aux recommandations concernant le micrologiciel.
+
+* L'évaluation UHC évalue désormais les risques d'ONTAP par rapport à la version cible.
+* Les rapports incluent désormais les identifiants CVE, les scores CVSS et les versions de correctifs recommandées.
+* UHC prend désormais en charge la sélection automatique de la version ONTAP à l’aide du `--target-ontap-version=recommended` paramètre ou dans le `config.yaml` fichier.
+* Les rapports incluent désormais les versions de firmware recommandées.
+
+
+
+
 [[13-august-2026]]
 == 13 août 2026
 
